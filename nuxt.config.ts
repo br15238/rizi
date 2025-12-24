@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const isProd = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -25,6 +27,6 @@ export default defineNuxtConfig({
     '@/assets/global.css'
   ],
   app: {
-    baseURL: process.env.NUXT_PUBLIC_PATH_BASE,
+    baseURL: isProd ? '/rizi/' : '/'
   }
 })
