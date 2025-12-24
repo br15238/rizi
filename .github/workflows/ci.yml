@@ -21,7 +21,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: false
+          version: 10.26.0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -36,21 +36,21 @@ jobs:
         run: pnpm exec nuxt typecheck
 
       - name: Run tests with coverage
-        run: pnpm coverage
+        run: yarn coverage
         env:
           CI: true
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: suanriz/rizi
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v5
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     slug: suanriz/rizitest
 
-      - name: Build project
-        run: pnpm generate
-        env:
-          NUXT_PUBLIC_EMAIL_SERVICE_ID: ${{ secrets.EMAIL_SERVICE_ID }}
-          NUXT_PUBLIC_EMAIL_PUBLIC_KEY: ${{ secrets.EMAIL_PUBLIC_KEY }}
+      # - name: Build project
+      #   run: pnpm generate
+      #   env:
+      #     NUXT_PUBLIC_EMAIL_SERVICE_ID: ${{ secrets.EMAIL_SERVICE_ID }}
+      #     NUXT_PUBLIC_EMAIL_PUBLIC_KEY: ${{ secrets.EMAIL_PUBLIC_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
