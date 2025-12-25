@@ -2,9 +2,12 @@
 import { useSeoMeta, useRoute, definePageMeta } from '#imports'
 import { computed } from 'vue'
 
-import type { GoodType, CakeDetailType } from '@@/shared/types'
-
-import { useMenuDetail, useMenuSharedState, useMenuList } from '@/composables/useMenu'
+import {
+  useMenuDetail,
+  useMenuSharedState,
+  useMenuList,
+} from '@/composables/useMenu'
+import type { GoodType, CakeDetailType } from '@/types'
 import { GOOD_DETAIL_TYPE } from '@/utils/constants'
 
 const route = useRoute()
@@ -94,7 +97,11 @@ definePageMeta({
       <div class="productRecommend">
         <div class="shopWrap" data-aos="fade-up" data-aos-duration="700">
           <div class="shopItem">
-            <GoodCard v-for="good in recommendList" :key="good.id" :data="good" />
+            <GoodCard
+              v-for="good in recommendList"
+              :key="good.id"
+              :data="good"
+            />
           </div>
         </div>
       </div>

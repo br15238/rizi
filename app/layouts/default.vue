@@ -2,7 +2,6 @@
 import { useRoute } from '#imports'
 import { onMounted, ref, computed } from 'vue'
 
-
 const route = useRoute()
 
 const colorPrimary = ref('#702222')

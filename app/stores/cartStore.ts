@@ -1,7 +1,7 @@
-import type { GoodType, CoffeeDetailType } from '@@/shared/types'
 import { message } from 'ant-design-vue'
 import { defineStore } from 'pinia'
 
+import type { GoodType, CoffeeDetailType } from '@/types'
 
 export type CartItem = GoodType<CoffeeDetailType> & {
   count: number

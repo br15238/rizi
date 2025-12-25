@@ -11,8 +11,6 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      domain: '',
-      pathBase: '',
       emailServiceId: '',
       emailPublicKey: ''
     }
@@ -20,7 +18,7 @@ export default defineNuxtConfig({
   antd: {
     extractStyle: true,
     components: [],
-    icons: []
+    icons: [],
   },
   css: [
     '@/assets/variable.css',

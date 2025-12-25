@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { useRuntimeConfig } from '#imports'
 
-import type { InfoDataType } from '@@/shared/types'
+import type { InfoDataType } from '@/types'
 
-import { SHOP_INFO_TYPE, SHOP_INFO } from '~/utils/constants'
+import { SHOP_INFO_TYPE, SHOP_INFO } from '@/utils/constants'
 
 const { app: { baseURL } } = useRuntimeConfig()
 const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
@@ -22,7 +22,11 @@ const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
         data-aos-easing="ease-in-sine"
       >
         <div class="w-full infoSm:w-[55%] md:w-full infoSm:mr-[8px] flex">
-          <a-image :src="`${baseURL}${item.img}`" :alt="item.name" class="w-full w-[282px] aspect-[282/220]" />
+          <a-image
+            :src="`${baseURL}${item.img}`"
+            :alt="item.name"
+            class="w-full w-[282px] aspect-[282/220]"
+          />
         </div>
         <div class="w-full max-w-[282px] infoSm:max-w-none infoSm:w-[45%] md:w-full m-auto">
           <h3
@@ -31,7 +35,11 @@ const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
           >
             {{ item.name }}
           </h3>
-          <div v-for="type in SHOP_TYPE" :key="type.type + item.name" class="mt-[20px] flex">
+          <div
+            v-for="type in SHOP_TYPE"
+            :key="type.type + item.name"
+            class="mt-[20px] flex"
+          >
             <div>
               <img
                 :src="`${baseURL}img/icon/${type.type}.webp`"

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
-import { computed, reactive, ref, watch, onMounted, } from 'vue'
+import { computed, reactive, ref, watch, onMounted } from 'vue'
 import type { UnwrapRef } from 'vue'
 
-import type { GoodsListMailType } from '@@/shared/types'
 import type { CheckboxChangeEvent } from 'ant-design-vue/es/checkbox/interface'
 
 import { useCartStore } from '@/stores/cartStore'
 import { useFavouriteStore } from '@/stores/favouriteStore'
+import type { GoodsListMailType } from '@/types'
 import { CART_TYPE } from '@/utils/constants'
 import { sendEmail } from '@/utils/tool'
 
@@ -37,8 +37,7 @@ const cartData = computed(() => cartStore.items)
 const favouritesData = computed(() => favouriteStore.items)
 
 const renderTabData = () => {
-  if (activeTab.value === 1)
-    return cartData.value
+  if (activeTab.value === 1) return cartData.value
   return favouritesData.value
 }
 
@@ -85,16 +84,17 @@ const renderList = () => {
 }
 
 const handleSendList = () => {
-  formRef.value?.validate()
-    .then(() => {
-      formData.data = new Intl.DateTimeFormat(undefined, {
-        month: '2-digit',
-        day: '2-digit',
-      }).format(new Date()).replace(/\//g, '-')
-      formData.content = renderList()
-      formData.totalPrice = renderPrice().totalPrice
-      sendEmail('evvyk7h', formData, handleSentMail)
+  formRef.value?.validate().then(() => {
+    formData.data = new Intl.DateTimeFormat(undefined, {
+      month: '2-digit',
+      day: '2-digit',
     })
+      .format(new Date())
+      .replace(/\//g, '-')
+    formData.content = renderList()
+    formData.totalPrice = renderPrice().totalPrice
+    sendEmail('evvyk7h', formData, handleSentMail)
+  })
 }
 
 const closeCheckoutModal = () => {
@@ -147,16 +147,24 @@ onMounted(() => {
         <div
           class="grow flex [@media_(max-width:255px)]:flex-wrap justify-start items-center gap-[10px] cartSm:mr-[10px] w-full"
         >
-          <a-checkbox v-if="activeTab === 1" v-model:checked="good.checked" class="w-[20px] shrink-0" />
+          <a-checkbox
+            v-if="activeTab === 1"
+            v-model:checked="good.checked"
+            class="w-[20px] shrink-0"
+          />
           <div class="w-[80px] shrink-0">
-            <img :src="`${baseURL}${good.img}`" class="w-full" :alt="good.name">
+            <img
+              :src="`${baseURL}${good.img}`"
+              class="w-full"
+              :alt="good.name"
+            >
           </div>
           <div class="flex grow justify-start items-center min-w-[77.88px] cart2Sm:w-full">
             <span class="leading-[16px]">{{ good.name }}</span>
           </div>
         </div>
         <div
-          class="shrink-2 flex flex-wrap cart2Sm:flex-nowrap justify-center cart2Sm:justify-end items-center gap-[10px] cart2Sm:pl-[30px] cartSm:pl-0 mt-[10px] cart2Sm:mt-0 w-full "
+          class="shrink-2 flex flex-wrap cart2Sm:flex-nowrap justify-center cart2Sm:justify-end items-center gap-[10px] cart2Sm:pl-[30px] cartSm:pl-0 mt-[10px] cart2Sm:mt-0 w-full"
         >
           <div class="priceWrap flex justify-center items-center w-[70px]">
             <div v-if="good.onSale" class="priceTxt onSalePriceTxt">

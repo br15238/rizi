@@ -2,7 +2,7 @@
 import { useRuntimeConfig } from '#imports'
 import { computed } from 'vue'
 
-import type { NewsModelType, NewsType } from '@@/shared/types'
+import type { NewsModelType, NewsType } from '@/types'
 
 const props = defineModel<NewsModelType>({
   required: true
@@ -10,7 +10,7 @@ const props = defineModel<NewsModelType>({
 const { app: { baseURL } } = useRuntimeConfig()
 const listIdMap = computed(() => props.value.list.map(x => x.id))
 const pageId = computed(() => props.value.data.id)
-const noPrev = computed(() => listIdMap.value[ 0 ] === pageId.value)
+const noPrev = computed(() => listIdMap.value[0] === pageId.value)
 const noNext = computed(() => listIdMap.value.at(-1) === pageId.value)
 
 const closeModal = () => props.value.isOpen = false
@@ -19,8 +19,8 @@ const handleChangeNews = (type: 'next' | 'prev') => {
   const idIndex = listIdMap.value.findIndex(x => x === pageId.value)
   const searchIndex = type === 'next' ? idIndex + 1 : idIndex - 1
 
-  if (listIdMap.value[ searchIndex ])
-    return props.value.data = props.value.list[ searchIndex ] as NewsType
+  if (listIdMap.value[searchIndex])
+    return props.value.data = props.value.list[searchIndex] as NewsType
 }
 </script>
 

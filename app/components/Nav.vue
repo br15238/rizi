@@ -2,10 +2,8 @@
 import { useRoute } from '#imports'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
+import { useCartStore } from '@/stores/cartStore'
 import { NAV_INFO } from '@/utils/constants'
-
-import { useCartStore } from '~/stores/cartStore'
-
 
 const route = useRoute()
 const cartStore = useCartStore()
@@ -13,8 +11,7 @@ const cartData = computed(() => cartStore.items.length)
 const isNavOpen = ref(false)
 
 const handleResize = () => {
-  if (window.innerWidth >= 1000 && isNavOpen.value)
-    isNavOpen.value = false
+  if (window.innerWidth >= 1000 && isNavOpen.value) isNavOpen.value = false
 }
 
 watch(
@@ -83,7 +80,11 @@ onBeforeUnmount(() => {
       </nav>
       <div class="navFull:flex navFull:ml-[45px]">
         <div class="cart">
-          <NuxtLink to="/cart" aria-label="購物車" class="navFull:h-full navFull:block">
+          <NuxtLink
+            to="/cart"
+            aria-label="購物車"
+            class="navFull:h-full navFull:block"
+          >
             <a-badge :offset="[-3, 5]" :count="cartData">
               <img
                 src="/img/icon/cart.webp"
@@ -104,13 +105,18 @@ onBeforeUnmount(() => {
   top: 24px;
   box-shadow: 0px 10px 0px #ff00;
   transform: rotate(45deg);
-  transition: box-shadow 0.3s 0s, top 0.3s 0.3s, transform 0.3s 0.6s;
+  transition:
+    box-shadow 0.3s 0s,
+    top 0.3s 0.3s,
+    transform 0.3s 0.6s;
 }
 
 .hamburger[aria-expanded="true"]:after {
   bottom: 23px;
   transform: rotate(-45deg);
-  transition: bottom 0.3s 0.3s, transform 0.3s 0.6s;
+  transition:
+    bottom 0.3s 0.3s,
+    transform 0.3s 0.6s;
 }
 
 .hamburger:before,
@@ -129,11 +135,16 @@ onBeforeUnmount(() => {
 .hamburger:before {
   top: 15px;
   box-shadow: 0px 10px 0px var(--mainTxt);
-  transition: box-shadow 0.3s 0.6s, top 0.3s 0.3s, transform 0.3s 0s;
+  transition:
+    box-shadow 0.3s 0.6s,
+    top 0.3s 0.3s,
+    transform 0.3s 0s;
 }
 
 .hamburger:after {
   bottom: 12px;
-  transition: bottom 0.3s 0.3s, transform 0.3s 0s;
+  transition:
+    bottom 0.3s 0.3s,
+    transform 0.3s 0s;
 }
 </style>

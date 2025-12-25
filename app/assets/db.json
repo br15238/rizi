@@ -127,9 +127,7 @@
       "indexImageHeight": 215,
       "price": 100,
       "type": 2,
-      "tag": [
-        1
-      ],
+      "tag": [1],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeG.webp",
@@ -163,9 +161,7 @@
       "indexImageHeight": 479,
       "price": 100,
       "type": 4,
-      "tag": [
-        1
-      ],
+      "tag": [1],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeJ.webp",
@@ -199,9 +195,7 @@
       "indexImageHeight": 295,
       "price": 130,
       "type": 3,
-      "tag": [
-        1
-      ],
+      "tag": [1],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeE.webp",
@@ -337,10 +331,7 @@
       "price": 260,
       "onSale": 230,
       "type": 1,
-      "tag": [
-        0,
-        1
-      ],
+      "tag": [0, 1],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeE.webp",
@@ -372,9 +363,7 @@
       "img": "img/storeGoods/coffeeJ.webp",
       "price": 220,
       "type": 2,
-      "tag": [
-        0
-      ],
+      "tag": [0],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeJ.webp",
@@ -406,9 +395,7 @@
       "img": "img/storeGoods/coffeeF.webp",
       "price": 200,
       "type": 3,
-      "tag": [
-        0
-      ],
+      "tag": [0],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeF.webp",
@@ -440,10 +427,7 @@
       "img": "img/storeGoods/coffeeG.webp",
       "price": 250,
       "type": 1,
-      "tag": [
-        0,
-        1
-      ],
+      "tag": [0, 1],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeG.webp",
@@ -508,9 +492,7 @@
       "price": 280,
       "onSale": 250,
       "type": 1,
-      "tag": [
-        0
-      ],
+      "tag": [0],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeJ.webp",
@@ -542,10 +524,7 @@
       "img": "img/storeGoods/coffeeF.webp",
       "price": 210,
       "type": 2,
-      "tag": [
-        0,
-        1
-      ],
+      "tag": [0, 1],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeF.webp",
@@ -610,9 +589,7 @@
       "img": "img/storeGoods/coffeeG.webp",
       "price": 400,
       "type": 1,
-      "tag": [
-        0
-      ],
+      "tag": [0],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeG.webp",
@@ -644,10 +621,7 @@
       "img": "img/storeGoods/coffeeE.webp",
       "price": 200,
       "type": 3,
-      "tag": [
-        0,
-        1
-      ],
+      "tag": [0, 1],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeE.webp",

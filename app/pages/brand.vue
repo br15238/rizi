@@ -3,7 +3,11 @@ import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
 
 import { STEP_INFO } from '@/utils/constants'
 
-useSeoMeta({ title: '品牌精神', description: '好日子咖啡輕食追求品質與效率，採用自家烘焙頂級莊園咖啡豆，堅持現做健康輕食。' })
+useSeoMeta({
+  title: '品牌精神',
+  description:
+    '好日子咖啡輕食追求品質與效率，採用自家烘焙頂級莊園咖啡豆，堅持現做健康輕食。',
+})
 definePageMeta({ title: '品牌精神' })
 
 const { app: { baseURL } } = useRuntimeConfig()
@@ -14,11 +18,15 @@ const { app: { baseURL } } = useRuntimeConfig()
     <div class="contentWrap !mb-0">
       <Divider title="品牌精神" />
     </div>
-    <img src="/img/brand/view.webp" alt="品牌專業" class="w-full w-[1200px] aspect-[1200/600]">
+    <img
+      src="/img/brand/view.webp"
+      alt="品牌專業"
+      class="w-full w-[1200px] aspect-[1200/600]"
+    >
     <div class="contentWrap">
       <div data-aos="zoom-in" data-aos-duration="800">
         <h3
-          class="text-[20px] text-[var(--mainRed)] leading-[1.5em] tracking-[.04em] text-center font-[400] m-[6.3%_auto_2.3%_auto] "
+          class="text-[20px] text-[var(--mainRed)] leading-[1.5em] tracking-[.04em] text-center font-[400] m-[6.3%_auto_2.3%_auto]"
         >
           享受生活，過「好日子」
         </h3>
@@ -41,19 +49,21 @@ const { app: { baseURL } } = useRuntimeConfig()
             >
               {{ step.title }}
             </h3>
-            <span
-              class="text-shadow-deep absolute top-[40px] left-[41px] font-[400] text-[var(--mainWhite)] text-[12px] leading-[12px]"
-            >{{
-              step.sub }}</span>
+            <span class="text-shadow-deep absolute top-[40px] left-[41px] font-[400] text-[var(--mainWhite)] text-[12px] leading-[12px]">
+              {{ step.sub }}
+            </span>
             <span
               class="text-shadow-deep absolute top-[5px] left-[11px] font-[500] text-[50px] leading-[50px] text-[var(--mainWhite)] opacity-70"
-            >{{
-              index + 1 }}</span>
-            <img :src="`${baseURL}${step.img}`" class="w-full rounded-[20px]" :alt="step.title">
+            >
+              {{ index + 1 }}
+            </span>
+            <img
+              :src="`${baseURL}${step.img}`"
+              class="w-full rounded-[20px]"
+              :alt="step.title"
+            >
           </div>
-          <div
-            class="p-[5%_6.5%] text-[16px] font-[100] tracking-[.08em] leading-[25px] text-[var(--mainTxt)] text-justify"
-          >
+          <div class="p-[5%_6.5%] text-[16px] font-[100] tracking-[.08em] leading-[25px] text-[var(--mainTxt)] text-justify">
             <p>{{ step.introduction }}</p>
           </div>
         </div>

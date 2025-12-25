@@ -5,7 +5,10 @@ import { computed, ref } from 'vue'
 import { useGoodsList } from '@/composables/useGoods'
 import { STORE_TAB_TYPE } from '@/utils/constants'
 
-useSeoMeta({ title: '線上購物', description: '好日子咖啡輕食線上購物，提供多款優質咖啡豆、禮盒選購。' })
+useSeoMeta({
+  title: '線上購物',
+  description: '好日子咖啡輕食線上購物，提供多款優質咖啡豆、禮盒選購。',
+})
 definePageMeta({ title: '線上購物' })
 
 const pageConfig = ref({
@@ -32,7 +35,11 @@ const handleTabClick = (index: number) => {
   <section class="contentWrap">
     <Divider title="線上購物" />
     <div class="flex flex-col md:flex-row justify-between m-auto">
-      <Tab v-model="activeTab" :tab-data="STORE_TAB_TYPE" @handle-tab-click="handleTabClick" />
+      <Tab
+        v-model="activeTab"
+        :tab-data="STORE_TAB_TYPE"
+        @handle-tab-click="handleTabClick"
+      />
       <div
         class="shopWrap"
         data-aos="fade-left"

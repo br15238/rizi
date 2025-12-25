@@ -1,4 +1,16 @@
-import type { OptionType, NavInfoType, TabType, InfoDataType, ContactInfoType, StepDataType, MenuListType, ShopInfoType, SnsInfoType, StoreDetailType, GoodDetailType } from '@@/shared/types'
+import type {
+  OptionType,
+  NavInfoType,
+  TabType,
+  InfoDataType,
+  ContactInfoType,
+  StepDataType,
+  MenuListType,
+  ShopInfoType,
+  SnsInfoType,
+  StoreDetailType,
+  GoodDetailType,
+} from '@/types'
 
 export const SITE_NAME = '好日子咖啡輕食 RIZI COFE HOUSE'
 

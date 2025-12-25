@@ -48,7 +48,7 @@ export type CoffeeDetailType = {
     flavorDetail: string
     roast: string
     acidity: string
-  };
+  }
   info: string[]
 }
 export type GoodType<T extends CakeDetailType | CoffeeDetailType> = {
@@ -63,15 +63,14 @@ export type GoodType<T extends CakeDetailType | CoffeeDetailType> = {
   detail: T
 } & (T extends CoffeeDetailType
   ? {
-    count?: number
-    checked?: boolean
-  }
+      count?: number
+      checked?: boolean
+    }
   : {
-    indexImg: string
-    indexImageWidth: number
-    indexImageHeight: number
-  }
-  )
+      indexImg: string
+      indexImageWidth: number
+      indexImageHeight: number
+    })
 
 export type NewsModelType = {
   isOpen: boolean
@@ -91,7 +90,8 @@ type InfoDataKeyStr = 'name' | 'tel' | 'opening' | 'address' | 'img' | 'aos' | '
 export type InfoDataType = Readonly<Record<InfoDataKeyStr, string> & Record<'id', number>>
 
 type NewsKeyStr = 'title' | 'introduction' | 'img'
-export type NewsType = Record<NewsKeyStr, string> & Record<'id' | 'type', number>
+export type NewsType = Record<NewsKeyStr, string> &
+  Record<'id' | 'type', number>
 
 type MenuListKeyStr = 'name' | 'introduction' | 'img' | 'link' | 'aos'
 export type MenuListType = Readonly<Record<MenuListKeyStr, string>>
@@ -102,7 +102,8 @@ type EmailKeyStr = 'cause' | 'name' | 'email' | 'subject' | 'content'
 export type EmailType = Readonly<Record<EmailKeyStr, string>>
 
 type GoodsListMailKeyStr = 'email' | 'data' | 'content'
-export type GoodsListMailType = Record<GoodsListMailKeyStr, string> & Record<'totalPrice', number>
+export type GoodsListMailType = Record<GoodsListMailKeyStr, string> &
+  Record<'totalPrice', number>
 
 export type BreadcrumbDataType = Readonly<Record<'name' | 'link', string>>
 

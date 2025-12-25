@@ -33,8 +33,8 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
         <img
           class="w-full h-auto aspect-[12/5]"
           :src="getSrc(item.img, 'phone', false)"
-          :srcset="getSrcSet(item.img, [768, 1200])"
-          sizes="(max-width: 768px) 100vw, 1200px"
+          :srcset="getSrcSet(item.img, [546, 1200])"
+          sizes="(max-width: 546px) 546px, 1200px"
           width="1200"
           height="500"
           :alt="item.alt || 'Banner'"

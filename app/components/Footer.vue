@@ -1,9 +1,13 @@
 <script lang="ts" setup>
 import { useRuntimeConfig } from '#imports'
 
-import type { InfoDataType } from '@@/shared/types'
-
-import { CONTACT_INFO, SHOP_INFO_TYPE, SHOP_INFO, SNS_INFO } from '@/utils/constants'
+import type { InfoDataType } from '@/types'
+import {
+  CONTACT_INFO,
+  SHOP_INFO_TYPE,
+  SHOP_INFO,
+  SNS_INFO,
+} from '@/utils/constants'
 
 const { app: { baseURL } } = useRuntimeConfig()
 
@@ -20,7 +24,11 @@ const HEAD_OFFICE_INFO = SHOP_INFO.find(x => x.id === 1) as InfoDataType
     <div class="px-[4%] m-auto max-w-[1280px]">
       <div class="flex flex-col md:flex-row items-center md:justify-between">
         <div class="max-w-[246px] aspect-[246/108]">
-          <img :src="`${baseURL}img/logoFooter.webp`" class="w-full w-[246px] aspect-[246/108]" alt=" logo">
+          <img
+            :src="`${baseURL}img/logoFooter.webp`"
+            class="w-full w-[246px] aspect-[246/108]"
+            alt=" logo"
+          >
         </div>
         <div
           class="my-[3.4%] footerSm:mx-0 flex flex-col footerSm:flex-row justify-between items-center footerSm:items-end md:w-[60%] md:ml-[6%]"
@@ -30,7 +38,11 @@ const HEAD_OFFICE_INFO = SHOP_INFO.find(x => x.id === 1) as InfoDataType
               <p class="tracking-[.08em]">
                 創始店鋪
               </p>
-              <div v-for="item in HEAD_OFFICE_TYPE" :key="item.type" class="flex items-center mt-[14px]">
+              <div
+                v-for="item in HEAD_OFFICE_TYPE"
+                :key="item.type"
+                class="flex items-center mt-[14px]"
+              >
                 <img
                   :src="`${baseURL}img/icon/${item.type}.webp`"
                   class="mr-[2px]"

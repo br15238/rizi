@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-import { useRuntimeConfig } from '#imports'
 import { ref, watch } from 'vue'
 
-import type { CakeDetailType, CoffeeDetailType, GoodType } from '@@/shared/types'
+import type { CakeDetailType, CoffeeDetailType, GoodType } from '@/types'
 
 const props = defineProps<{
   data: GoodType<CakeDetailType | CoffeeDetailType>
 }>()
-const { app: { baseURL } } = useRuntimeConfig()
-const largePicSrc = ref<string | undefined>(props.data.detail.imgs[ 0 ])
+const largePicSrc = ref<string | undefined>(props.data.detail.imgs[0])
 const currentIndex = ref(0)
 const isAlbumOpen = ref(false)
 
@@ -38,7 +36,9 @@ watch(() => props.data, (newValue) => {
       <img
         v-for="(img, index) in props.data.detail.imgs"
         :key="img + props.data.id"
-        :src="`${baseURL}${img}`"
+        :src="getSrc(img, 'phone', true)"
+        :srcset="getSrcSet(img, [280, 580])"
+        sizes="(max-width: 305px) 280px, 580px"
         class="cursor-pointer aspect-square w-[48.65%] mainSmallPicCol:w-[23%] mainPicCol:w-full nth-[-n+2]:mb-[2.86%] mainSmallPicCol:nth-[-n+2]:mb-0"
         :alt="props.data.name"
         role="button"
@@ -54,8 +54,11 @@ watch(() => props.data, (newValue) => {
       data-aos-easing="ease-in-sine"
     >
       <a-image
+        v-if="largePicSrc"
         :key="`${largePicSrc}${data.id}`"
-        :src="`${baseURL}${largePicSrc}`"
+        :src="getSrc(largePicSrc, 'phone', true)"
+        :srcset="getSrcSet(largePicSrc, [280, 580])"
+        sizes="(max-width: 305px) 280px, 580px"
         :preview="{ visible: isAlbumOpen }"
         class="aspect-square w-full"
         @click="isAlbumOpen = true"
@@ -63,14 +66,18 @@ watch(() => props.data, (newValue) => {
       <div style="display: none">
         <a-image-preview-group
           :key="props.data.id + currentIndex"
-          :preview="{ visible: isAlbumOpen, onVisibleChange: (visible: boolean) => (isAlbumOpen = visible), current: currentIndex }"
+          :preview="{
+            visible: isAlbumOpen,
+            onVisibleChange: (visible: boolean) => (isAlbumOpen = visible),
+            current: currentIndex,
+          }"
         >
           <a-image
             v-for="(img, index) in props.data.detail.imgs"
             :key="img + props.data.id"
-            :src="getSrc(img, 'phone', false)"
-            :srcset="getSrcSet(img, [679, 1200])"
-            sizes="(max-width: 679px) 100vw, 1200px"
+            :src="getSrc(img, 'phone', true)"
+            :srcset="getSrcSet(img, [280, 580])"
+            sizes="(max-width: 305px) 280px, 580px"
             width="580"
             height="580"
             :alt="`${props.data.name}-${index + 1}`"

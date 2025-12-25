@@ -1,7 +1,13 @@
 import { useAsyncData } from '#imports'
-import type { GoodType, CakeDetailType, ApiListResponse } from '@@/shared/types'
+
+import {
+  simulateMenuApi,
+  simulateMenuDetailApi,
+} from '@@/utils/simulation/menu'
 
 import { useBreadcrumb } from '@/composables/useBreadcrumb'
+
+import type { GoodType, CakeDetailType, ApiListResponse } from '@/types'
 
 export const useMenuSharedState = () => {
   const menuList = useState<GoodType<CakeDetailType>[]>('shared-menu-list', () => [])
@@ -17,15 +23,18 @@ export const useMenuList = (params: Ref<{
   return useAsyncData(
     `menu:${JSON.stringify(toValue(params))}`,
     async () => {
-      const res = await $fetch('/api/menu', { params: params.value })
-      menuList.value = res.list
+      const res = (await simulateMenuApi(
+        params.value,
+      )) as unknown as ApiListResponse<GoodType<CakeDetailType>>
+      if (res.list) menuList.value = res.list
       return res
     },
     {
       server: true,
-      default: () => ({ list: [], total: 0 }) as ApiListResponse<GoodType<CakeDetailType>>,
-      watch: [() => ({ ...params.value })]
-    }
+      default: () =>
+        ({ list: [], total: 0 }) as ApiListResponse<GoodType<CakeDetailType>>,
+      watch: [() => ({ ...params.value })],
+    },
   )
 }
 
@@ -34,14 +43,14 @@ export const useMenuDetail = (id: Ref<number>) => {
   return useAsyncData(
     `menu:${id.value}`,
     async () => {
-      const res = await $fetch(`/api/menu/${id.value}`)
+      const res = await simulateMenuDetailApi(String(id.value))
       if (res?.name) currentTitle.value = res.name
       return res
     },
     {
       server: true,
-      default: () => ({} as GoodType<CakeDetailType>),
-      watch: [id]
-    }
+      default: () => ({}) as GoodType<CakeDetailType>,
+      watch: [id],
+    },
   )
 }

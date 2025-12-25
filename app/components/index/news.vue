@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 
-import type { NewsModelType, NewsType } from '@@/shared/types'
-
 import { useNews } from '@/composables/useNews'
+
+import type { NewsModelType, NewsType } from '@/types'
 
 const query = ref({ page: 1, pageSize: 3, type: 0 })
 const { data } = await useNews(query)

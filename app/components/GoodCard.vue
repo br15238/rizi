@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 
-import type { CakeDetailType, CoffeeDetailType, GoodType } from '@@/shared/types'
-
-import { useCartStore } from '~/stores/cartStore'
-
+import { useCartStore } from '@/stores/cartStore'
+import type { CakeDetailType, CoffeeDetailType, GoodType } from '@/types'
 
 const props = defineProps<{ data: GoodType<CakeDetailType | CoffeeDetailType> }>()
 const { name, link, img, price, onSale, tag } = props.data
@@ -23,7 +21,7 @@ const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data
         :class="{ 'after:content-[attr(tag)] after:box-content after:leading-[12px] after:text-[12px] after:text-[var(--mainTxt)] after:absolute after:right-[-5px] after:top-[10px] after:w-[40px] after:h-[19px] after:p-[5px_5px_0px_7px] after:bg-[var(--tagBG)] before:content-[\'\'] before:absolute before:right-[-5px] before:top-[34px] before:border-t-5 before:border-r-5 before:border-r-transparent before:border-[var(--deepGray)]': tag?.includes(1) }"
       >
         <img
-          :src="getSrc(img, 'phone', false)"
+          :src="getSrc(img, 'phone', true)"
           :alt="name"
           width="280"
           height="280"

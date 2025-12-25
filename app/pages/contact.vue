@@ -2,12 +2,14 @@
 import { useSeoMeta, definePageMeta } from '#imports'
 import { ref } from 'vue'
 
-import type { EmailType } from '@@/shared/types'
-
+import type { EmailType } from '@/types'
 import { CONTACT_OPTIONS } from '@/utils/constants'
 import { sendEmail } from '@/utils/tool'
 
-useSeoMeta({ title: '聯絡我們', description: '好日子咖啡輕食聯絡方式，歡迎諮詢客服專區、異業合作或加盟資訊。' })
+useSeoMeta({
+  title: '聯絡我們',
+  description: '好日子咖啡輕食聯絡方式，歡迎諮詢客服專區、異業合作或加盟資訊。',
+})
 definePageMeta({ title: '聯絡我們' })
 
 const formRef = ref<HTMLFormElement | null>(null)
@@ -47,7 +49,11 @@ const handleSendEmail = () => {
             name="input_cause"
             required
           >
-            <option v-for="option in CONTACT_OPTIONS" :key="option.value" :value="option.value">
+            <option
+              v-for="option in CONTACT_OPTIONS"
+              :key="option.value"
+              :value="option.value"
+            >
               {{ option.label }}
             </option>
           </select>
@@ -111,8 +117,15 @@ const handleSendEmail = () => {
         </div>
       </form>
     </div>
-    <p class="text-[var(--mainTxt)] text-[16px] font-[300] tracking-[.08em] mt-[30px] flex items-center">
-      <img src="/img/icon/mail.webp" alt="信箱" class="mr-[8px]">真的會收到信件哦！
+    <p
+      class="text-[var(--mainTxt)] text-[16px] font-[300] tracking-[.08em] mt-[30px] flex items-center"
+    >
+      <img
+        src="/img/icon/mail.webp"
+        alt="信箱"
+        class="mr-[8px]"
+      >
+      真的會收到信件哦！
     </p>
   </section>
 </template>

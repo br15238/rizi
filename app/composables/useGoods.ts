@@ -1,7 +1,13 @@
 import { useAsyncData } from '#imports'
-import type { GoodType, CoffeeDetailType, ApiListResponse } from '@@/shared/types'
+
+import {
+  simulateGoodsApi,
+  simulateGoodsDetailApi,
+} from '@@/utils/simulation/goods'
 
 import { useBreadcrumb } from '@/composables/useBreadcrumb'
+
+import type { GoodType, CoffeeDetailType, ApiListResponse } from '@/types'
 
 export const useGoodsSharedState = () => {
   const goodsList = useState<GoodType<CoffeeDetailType>[]>('shared-goods-list', () => [])
@@ -17,8 +23,10 @@ export const useGoodsList = (params: Ref<{
   return useAsyncData(
     `goods:${JSON.stringify(toValue(params))}`,
     async () => {
-      const res = await $fetch('/api/goods', { params: params.value })
-      goodsList.value = res.list
+      const res = (await simulateGoodsApi(
+        params.value,
+      )) as unknown as ApiListResponse<GoodType<CoffeeDetailType>>
+      if (res.list) goodsList.value = res.list
       return res
     },
     {
@@ -34,14 +42,14 @@ export const useGoodsDetail = (id: Ref<number>) => {
   return useAsyncData(
     `goods:${JSON.stringify(toValue(id.value))}`,
     async () => {
-      const res = await $fetch(`/api/goods/${id.value}`)
+      const res = await simulateGoodsDetailApi(String(id.value))
       if (res?.name) currentTitle.value = res.name
       return res
     },
     {
       server: true,
-      default: () => ({} as GoodType<CoffeeDetailType>),
-      watch: [id]
-    }
+      default: () => ({}) as GoodType<CoffeeDetailType>,
+      watch: [id],
+    },
   )
 }

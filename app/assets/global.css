@@ -1,5 +1,4 @@
 @layer base {
-
   html,
   body {
     font-family: "Noto Sans TC", sans-serif;
@@ -52,10 +51,12 @@
   }
 }
 
-
 @layer utilities {
-  .text-shadow-deep{
-      text-shadow: 0px 0px 6px var(--shadowDeep), 0px 0px 3px var(--shadowDeep), 0px 0px 1px var(--shadowDeep);
+  .text-shadow-deep {
+    text-shadow:
+      0px 0px 6px var(--shadowDeep),
+      0px 0px 3px var(--shadowDeep),
+      0px 0px 1px var(--shadowDeep);
   }
 }
 
@@ -160,7 +161,7 @@
     align-items: center;
   }
 
-  .priceWrap>div {
+  .priceWrap > div {
     line-height: 1.2em;
     font-size: 18px;
     letter-spacing: 0.04em;
@@ -170,7 +171,7 @@
     margin: 0 6px;
   }
 
-  .priceWrap>div>span {
+  .priceWrap > div > span {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.2em;
@@ -256,7 +257,7 @@
     margin-top: 18px !important;
   }
 
-  .ant-modal .ant-modal-footer .ant-btn+.ant-btn:not(.ant-dropdown-trigger) {
+  .ant-modal .ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
     margin-inline-start: 0px;
   }
 

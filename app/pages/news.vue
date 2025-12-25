@@ -2,13 +2,17 @@
 import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
 import { computed, ref } from 'vue'
 
-import type { NewsType, NewsModelType } from '@@/shared/types'
 import type { Key } from 'ant-design-vue/es/_util/type'
 
 import { useNews } from '@/composables/useNews'
+import type { NewsType, NewsModelType } from '@/types'
 import { NEWS_TYPE } from '@/utils/constants'
 
-useSeoMeta({ title: '最新消息', description: '好日子咖啡輕食最新消息，不定期推出優惠活動與新品上市資訊，歡迎關注。' })
+useSeoMeta({
+  title: '最新消息',
+  description:
+    '好日子咖啡輕食最新消息，不定期推出優惠活動與新品上市資訊，歡迎關注。',
+})
 definePageMeta({ title: '最新消息' })
 
 const { app: { baseURL } } = useRuntimeConfig()

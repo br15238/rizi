@@ -30,7 +30,6 @@ export const getSrc = (
   return domain ? `${baseURL}${formatted}` : formatted
 }
 
-
 export const getSrcSet = (url: string, widths: [number, number]) => {
   const [phoneWidth, pcWidth] = widths
   const phone = getSrc(url, 'phone')

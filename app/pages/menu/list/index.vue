@@ -7,13 +7,10 @@ import { useMenuList } from '@/composables/useMenu'
 
 import { MENU_TAB_TYPE } from '@/utils/constants'
 
-
 useSeoMeta({ title: '菜單列表', description: '查看各類咖啡豆、甜點與輕食的詳細介紹。' })
 definePageMeta({
   title: '菜單列表',
-  breadcrumb: [
-    { title: '門市菜單', to: '/menu' }
-  ]
+  breadcrumb: [{ title: '門市菜單', to: '/menu' }],
 })
 
 const route = useRoute()
@@ -38,8 +35,7 @@ const handleTabClick = (index: number) => {
 }
 
 onMounted(() => {
-  if (route.query && route.query.type)
-    router.replace({ query: {} })
+  if (route.query && route.query.type) router.replace({ query: {} })
 })
 </script>
 
@@ -47,7 +43,11 @@ onMounted(() => {
   <section class="contentWrap">
     <Divider title="菜單列表" />
     <div class="flex flex-col md:flex-row">
-      <Tab v-model="activeTab" :tab-data="MENU_TAB_TYPE" @handle-tab-click="handleTabClick" />
+      <Tab
+        v-model="activeTab"
+        :tab-data="MENU_TAB_TYPE"
+        @handle-tab-click="handleTabClick"
+      />
       <div
         class="shopWrap"
         data-aos="fade-left"

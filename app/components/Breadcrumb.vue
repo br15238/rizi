@@ -2,9 +2,9 @@
 import { useRoute } from '#imports'
 import { computed } from 'vue'
 
-import type { BreadcrumbType } from '@@/shared/types'
-
 import { useBreadcrumb } from '@/composables/useBreadcrumb'
+
+import type { BreadcrumbType } from '@/types'
 
 const route = useRoute()
 const { currentTitle } = useBreadcrumb()
@@ -24,7 +24,7 @@ const breadcrumbData = computed(() => route.meta.breadcrumb as BreadcrumbType[] 
         <li
           v-for="breadcrumb in breadcrumbData"
           :key="breadcrumb.to"
-          class="text-[11px] not-first:before:content-['/'] not-first:before:text-[var(--deepGray)] not-first:before:px-[4px] "
+          class="text-[11px] not-first:before:content-['/'] not-first:before:text-[var(--deepGray)] not-first:before:px-[4px]"
         >
           <NuxtLink :to="breadcrumb.to" class="not-hover:!text-[var(--deepGray)] text-[12px] inline-block">
             {{ breadcrumb.title }}

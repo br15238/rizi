@@ -15,7 +15,11 @@ const { app: { baseURL } } = useRuntimeConfig()
         data-aos-duration="800"
         data-aos-easing="ease-in-sine"
       >
-        <img :src="`${baseURL}img/brand/index.gif`" alt=" 環境氛圍" class="w-full w-[421px] aspect-[748/387]">
+        <img
+          :src="`${baseURL}img/brand/index.gif`"
+          alt="環境氛圍"
+          class="w-full w-[421px] aspect-[748/387]"
+        >
       </div>
       <div
         class="w-[80%] conceptFull:w-[234px] ml-0 conceptFull:ml-[9%] text-justify"
@@ -25,7 +29,7 @@ const { app: { baseURL } } = useRuntimeConfig()
       >
         <h3
           dir="rtl"
-          class="text-[20px] font-[300] tracking-[.08em] leading-[1.5em] text-[var(--mainRed)] h-[80px] justify-center indent-[-.7em] conceptFull:indent-[-.5em] flex items-center text-center "
+          class="text-[20px] font-[300] tracking-[.08em] leading-[1.5em] text-[var(--mainRed)] h-[80px] justify-center indent-[-.7em] conceptFull:indent-[-.5em] flex items-center text-center"
         >
           享受生活，過「好日子」
         </h3>

@@ -2,14 +2,16 @@
 import { useSeoMeta, useRoute, definePageMeta } from '#imports'
 import { computed } from 'vue'
 
-import type { GoodType, CoffeeDetailType } from '@@/shared/types'
+import {
+  useGoodsDetail,
+  useGoodsSharedState,
+  useGoodsList,
+} from '@/composables/useGoods'
 
-import { useGoodsDetail, useGoodsSharedState, useGoodsList } from '@/composables/useGoods'
-
+import { useCartStore } from '@/stores/cartStore'
+import { useFavouriteStore } from '@/stores/favouriteStore'
+import type { GoodType, CoffeeDetailType } from '@/types'
 import { STORE_DETAIL_TYPE } from '@/utils/constants'
-
-import { useCartStore } from '~/stores/cartStore'
-import { useFavouriteStore } from '~/stores/favouriteStore'
 
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
@@ -33,11 +35,14 @@ const recommendList = computed(() => {
 if (typeof good.value === 'object' && goodsList.value.length === 0)
   useGoodsList(recommendParams)
 
-useSeoMeta({ title: () => typeof good.value === 'object' && good.value?.id ? good.value.name : '商品不存在' })
+useSeoMeta({
+  title: () =>
+    typeof good.value === 'object' && good.value?.id
+      ? good.value.name
+      : '商品不存在',
+})
 definePageMeta({
-  breadcrumb: [
-    { title: '線上購物', to: '/store' }
-  ]
+  breadcrumb: [{ title: '線上購物', to: '/store' }],
 })
 </script>
 
@@ -78,10 +83,18 @@ definePageMeta({
           </li>
         </ul>
         <div class="flex flex-col">
-          <button class="w-full mb-[12px]" type="submit" @click="cartStore.add(good)">
+          <button
+            class="w-full mb-[12px]"
+            type="submit"
+            @click="cartStore.add(good)"
+          >
             加入購物車
           </button>
-          <button type="submit" class="buttonPrimary w-full" @click="favouriteStore.add(good)">
+          <button
+            type="submit"
+            class="buttonPrimary w-full"
+            @click="favouriteStore.add(good)"
+          >
             加入收藏清單
           </button>
         </div>

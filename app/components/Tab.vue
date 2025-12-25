@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { TabType } from '@@/shared/types'
+import type { TabType } from '@/types'
 
 const props = defineProps<{
   tabData: TabType[]
