@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useRuntimeConfig } from '#imports'
 import { computed } from 'vue'
 
 import type { CakeDetailType, CoffeeDetailType, GoodType } from '@@/shared/types'
@@ -9,7 +8,6 @@ import { useCartStore } from '~/stores/cartStore'
 
 const props = defineProps<{ data: GoodType<CakeDetailType | CoffeeDetailType> }>()
 const { name, link, img, price, onSale, tag } = props.data
-const { app: { baseURL } } = useRuntimeConfig()
 const cartStore = useCartStore()
 const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data, 'indexImg'))
 </script>
@@ -24,7 +22,15 @@ const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data
         class="relative"
         :class="{ 'after:content-[attr(tag)] after:box-content after:leading-[12px] after:text-[12px] after:text-[var(--mainTxt)] after:absolute after:right-[-5px] after:top-[10px] after:w-[40px] after:h-[19px] after:p-[5px_5px_0px_7px] after:bg-[var(--tagBG)] before:content-[\'\'] before:absolute before:right-[-5px] before:top-[34px] before:border-t-5 before:border-r-5 before:border-r-transparent before:border-[var(--deepGray)]': tag?.includes(1) }"
       >
-        <img :src="`${baseURL}${img}`" :alt="name" class="w-full rounded-t-[10px] w-[170px] aspect-square">
+        <img
+          :src="getSrc(img, 'phone', false)"
+          :srcset="getSrcSet(img, [679, 1200])"
+          sizes="(max-width: 679px) 100vw, 1200px"
+          :alt="name"
+          width="580"
+          height="580"
+          class="w-full rounded-t-[10px] aspect-square"
+        >
       </div>
       <div class="flex flex-col flex-1 p-[5%_8%_7%] relative">
         <button

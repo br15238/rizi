@@ -6,7 +6,7 @@ import { STEP_INFO } from '@/utils/constants'
 useSeoMeta({ title: '品牌精神', description: '好日子咖啡輕食追求品質與效率，採用自家烘焙頂級莊園咖啡豆，堅持現做健康輕食。' })
 definePageMeta({ title: '品牌精神' })
 
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
@@ -49,7 +49,7 @@ const { public: { domain } } = useRuntimeConfig()
               class="text-shadow-deep absolute top-[5px] left-[11px] font-[500] text-[50px] leading-[50px] text-[var(--mainWhite)] opacity-70"
             >{{
               index + 1 }}</span>
-            <img :src="`${domain}${step.img}`" class="w-full rounded-[20px]" :alt="step.title">
+            <img :src="`${baseURL}${step.img}`" class="w-full rounded-[20px]" :alt="step.title">
           </div>
           <div
             class="p-[5%_6.5%] text-[16px] font-[100] tracking-[.08em] leading-[25px] text-[var(--mainTxt)] text-justify"

@@ -12,6 +12,7 @@ useHead({
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
+    { property: 'description', content:'好日子咖啡輕食 RIZI COFE HOUSE - 提供高品質的手沖咖啡、特調飲品、幸福甜品與輕食餐點。' },
     // Open Graph
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://suanriz.github.io/rizi/' },

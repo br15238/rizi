@@ -68,7 +68,11 @@ watch(() => props.data, (newValue) => {
           <a-image
             v-for="(img, index) in props.data.detail.imgs"
             :key="img + props.data.id"
-            :src="`${baseURL}${img}`"
+            :src="getSrc(img, 'phone', false)"
+            :srcset="getSrcSet(img, [679, 1200])"
+            sizes="(max-width: 679px) 100vw, 1200px"
+            width="580"
+            height="580"
             :alt="`${props.data.name}-${index + 1}`"
           />
         </a-image-preview-group>
