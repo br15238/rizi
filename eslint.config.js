@@ -17,6 +17,7 @@ export default [
       'src/types/*',
       'node_modules/',
       'dist/',
+      '.output',
       '.nuxt/',
     ],
   },

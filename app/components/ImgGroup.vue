@@ -7,7 +7,7 @@ import type { CakeDetailType, CoffeeDetailType, GoodType } from '@@/shared/types
 const props = defineProps<{
   data: GoodType<CakeDetailType | CoffeeDetailType>
 }>()
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 const largePicSrc = ref<string | undefined>(props.data.detail.imgs[ 0 ])
 const currentIndex = ref(0)
 const isAlbumOpen = ref(false)
@@ -38,7 +38,7 @@ watch(() => props.data, (newValue) => {
       <img
         v-for="(img, index) in props.data.detail.imgs"
         :key="img + props.data.id"
-        :src="`${domain}${img}`"
+        :src="`${baseURL}${img}`"
         class="cursor-pointer aspect-square w-[48.65%] mainSmallPicCol:w-[23%] mainPicCol:w-full nth-[-n+2]:mb-[2.86%] mainSmallPicCol:nth-[-n+2]:mb-0"
         :alt="props.data.name"
         role="button"
@@ -55,7 +55,7 @@ watch(() => props.data, (newValue) => {
     >
       <a-image
         :key="`${largePicSrc}${data.id}`"
-        :src="`${domain}${largePicSrc}`"
+        :src="`${baseURL}${largePicSrc}`"
         :preview="{ visible: isAlbumOpen }"
         class="aspect-square w-full"
         @click="isAlbumOpen = true"
@@ -68,7 +68,7 @@ watch(() => props.data, (newValue) => {
           <a-image
             v-for="(img, index) in props.data.detail.imgs"
             :key="img + props.data.id"
-            :src="`${domain}${img}`"
+            :src="`${baseURL}${img}`"
             :alt="`${props.data.name}-${index + 1}`"
           />
         </a-image-preview-group>

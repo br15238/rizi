@@ -24,10 +24,10 @@ export const getSrc = (
 ) => {
   if (!url) return ''
 
-  const { public: { domain:base } } = useRuntimeConfig()
+  const { app: { baseURL } } = useRuntimeConfig()
 
   const formatted = url.replace(/(\.webp)$/, `-${size}$1`)
-  return domain ? `${base}${formatted}` : formatted
+  return domain ? `${baseURL}${formatted}` : formatted
 }
 
 

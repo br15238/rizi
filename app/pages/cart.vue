@@ -18,7 +18,7 @@ useSeoMeta({
 definePageMeta({ title: '購物車' })
 
 const activeTab = ref(1)
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 const isCheckoutModalShow = ref(false)
 const formRef = ref<HTMLFormElement | null>(null)
 const formData: UnwrapRef<GoodsListMailType> = reactive({
@@ -149,7 +149,7 @@ onMounted(() => {
         >
           <a-checkbox v-if="activeTab === 1" v-model:checked="good.checked" class="w-[20px] shrink-0" />
           <div class="w-[80px] shrink-0">
-            <img :src="`${domain}${good.img}`" class="w-full" :alt="good.name">
+            <img :src="`${baseURL}${good.img}`" class="w-full" :alt="good.name">
           </div>
           <div class="flex grow justify-start items-center min-w-[77.88px] cart2Sm:w-full">
             <span class="leading-[16px]">{{ good.name }}</span>

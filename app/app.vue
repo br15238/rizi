@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useHead,  useRuntimeConfig } from '#imports'
 
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 
 useHead({
   title: '好日子咖啡輕食 RIZI COFE HOUSE',
@@ -27,7 +27,7 @@ useHead({
     { property: 'twitter:image', content:'https://raw.githubusercontent.com/suanriz/rizi/refs/heads/master/public/img/logoFooter.webp' }
   ],
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: `${domain}img/favicon.svg` },
+    { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}img/favicon.svg` },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap' }

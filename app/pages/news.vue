@@ -11,7 +11,7 @@ import { NEWS_TYPE } from '@/utils/constants'
 useSeoMeta({ title: '最新消息', description: '好日子咖啡輕食最新消息，不定期推出優惠活動與新品上市資訊，歡迎關注。' })
 definePageMeta({ title: '最新消息' })
 
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 const pageConfig = ref({
   current: 1,
   pageSize: 4,
@@ -75,7 +75,7 @@ const handleOpenModal = (data: NewsType) => {
       >
         <div class="w-full aspect-[475/300] overflow-hidden">
           <img
-            :src="`${domain}${news.img}`"
+            :src="`${baseURL}${news.img}`"
             :alt="news.title"
             class="w-full transition-transform duration-[.3s] hover:scale-[1.2]"
           >

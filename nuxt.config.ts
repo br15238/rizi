@@ -11,10 +11,10 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      domain: process.env.NUXT_PUBLIC_DOMAIN,
-      pathBase: process.env.NUXT_PUBLIC_PATH_BASE,
-      emailServiceId: process.env.NUXT_PUBLIC_EMAIL_SERVICE_ID,
-      emailPublicKey: process.env.NUXT_PUBLIC_EMAIL_PUBLIC_KEY
+      domain: '',
+      pathBase: '',
+      emailServiceId: '',
+      emailPublicKey: ''
     }
   },
   antd: {

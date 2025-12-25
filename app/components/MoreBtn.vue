@@ -5,7 +5,7 @@ const props = defineProps({
   link: { type: String, required: true },
   noGoodLink: { type: Boolean, required: false },
 })
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const { public: { domain } } = useRuntimeConfig()
         <slot>View More</slot>
       </NuxtLink>
       <img
-        :src="`${domain}img/icon/more.svg`"
+        :src="`${baseURL}img/icon/more.svg`"
         alt="看更多"
         class="!align-sub ml-[5px] grayscale-100 opacity-50 group-hover:grayscale-0 group-hover:opacity-100"
         width="20"

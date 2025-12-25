@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRuntimeConfig } from '#imports'
 
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 
 </script>
 
@@ -15,7 +15,7 @@ const { public: { domain } } = useRuntimeConfig()
         data-aos-duration="800"
         data-aos-easing="ease-in-sine"
       >
-        <img :src="`${domain}img/brand/index.gif`" alt=" 環境氛圍" class="w-full w-[421px] aspect-[748/387]">
+        <img :src="`${baseURL}img/brand/index.gif`" alt=" 環境氛圍" class="w-full w-[421px] aspect-[748/387]">
       </div>
       <div
         class="w-[80%] conceptFull:w-[234px] ml-0 conceptFull:ml-[9%] text-justify"

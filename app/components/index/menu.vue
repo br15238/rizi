@@ -7,7 +7,7 @@ import { useMenuList } from '@/composables/useMenu'
 const query = ref({ page: 1, pageSize: 7 })
 const { data } = await useMenuList(query)
 const list = computed(() => data.value.list)
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 
 </script>
 
@@ -45,7 +45,7 @@ const { public: { domain } } = useRuntimeConfig()
           </div>
           <div class="w-full h-full overflow-hidden">
             <img
-              :src="`${domain}${item.indexImg}`"
+              :src="`${baseURL}${item.indexImg}`"
               :alt="item.name"
               :style="{width: item.indexImageWidth, height: item.indexImageHeight}"
               class="w-full !h-full object-cover object-center"
