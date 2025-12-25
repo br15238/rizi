@@ -6,7 +6,7 @@ import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue'
 import { useBanner } from '@/composables/useBanner'
 import { getSrc, getSrcSet } from '@/utils/tool'
 
-const { public: { domain } } = useRuntimeConfig()
+const { app: { baseURL } } = useRuntimeConfig()
 const { data: banners } = await useBanner()
 
 const bannerList = computed(() => banners.value ?? [])
@@ -15,7 +15,7 @@ const ARROW_COMPONENT = [
   { id: 'nextArrow', class: '!right-[10px]', component: RightCircleOutlined },
 ]
 
-const handleOpenNewTab = (link: string) => window.open(domain + link, '_blank')
+const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
 </script>
 
 <template>
