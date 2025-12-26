@@ -44,9 +44,9 @@ const list = computed(() => data.value.list)
             <img
               :src="getSrc(item.indexImg, 'phone', false)"
               :srcset="getSrcSet(item.indexImg, [item.indexImagePhoneSize[0], item.indexImagePCSize[0]])"
-              :sizes="`(max-width: 412px) ${item.indexImagePhoneSize[0]}px, ${item.indexImagePCSize[0]}px`"
+              :sizes="`(max-width: 412px) 100vw, ${item.indexImagePCSize[0]}px`"
               :alt="item.name"
-              :style="{ width: item.indexImagePCSize[0], height: item.indexImagePCSize[1] }"
+              :style="{ aspectRatio: `${item.indexImagePCSize[0]}/${item.indexImagePCSize[1]}` }"
               class="w-full !h-full object-cover object-center"
               :class="{
                 'max-phone:!object-left': item.name === '熱壓蘑菇芝士',
