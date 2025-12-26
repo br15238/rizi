@@ -41,20 +41,18 @@ const list = computed(() => data.value.list)
             </p>
           </div>
           <div class="w-full h-full overflow-hidden">
-            <img
-              :src="getSrc(item.indexImg, 'phone', false)"
-              :srcset="getSrcSet(item.indexImg, [item.indexImagePhoneSize[0], item.indexImagePCSize[0]])"
-              :sizes="`(max-width: 412px) 100vw, ${item.indexImagePCSize[0]}px`"
+            <ResponsiveImg
+              :src="item.indexImg"
               :alt="item.name"
-              :style="{ aspectRatio: `${item.indexImagePCSize[0]}/${item.indexImagePCSize[1]}` }"
-              class="w-full !h-full object-cover object-center"
-              :class="{
+              :img-class="{
+                'w-full !h-full object-cover object-center': true,
                 'max-phone:!object-left': item.name === '熱壓蘑菇芝士',
                 'max-phone:!object-bottom': item.name === '清爽西瓜特調',
                 '!object-top': item.name === '冰心莓果優格',
                 'max-menuSm:!object-top': item.name === '莓果幕斯塔'
               }"
-            >
+              :img-style="{ aspectRatio: `${item.indexImagePCSize[0]}/${item.indexImagePCSize[1]}` }"
+            />
           </div>
         </NuxtLink>
       </div>

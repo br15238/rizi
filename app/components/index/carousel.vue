@@ -4,7 +4,6 @@ import { computed } from 'vue'
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue'
 
 import { useBanner } from '@/composables/useBanner'
-import { getSrc, getSrcSet } from '@/utils/tool'
 
 const { app: { baseURL } } = useRuntimeConfig()
 const { data: banners } = await useBanner()
@@ -30,15 +29,13 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
         @click="item.link && handleOpenNewTab(item.link)"
         @keyup.enter="item.link && handleOpenNewTab(item.link)"
       >
-        <img
-          class="w-full h-auto aspect-[1280/533]"
-          :src="getSrc(item.img, 'phone', false)"
-          :srcset="getSrcSet(item.img, [412, 1280])"
-          sizes="(max-width: 412px) 100vw, 1280px"
+        <ResponsiveImg
+          img-class="w-full h-auto aspect-[1280/533]"
+          :src="item.img"
           :alt="item.alt || 'Banner'"
-          :fetchpriority="index === 0 ? 'high' : 'auto'"
+          :fetchpriority="index === 0 ? 'high' : undefined"
           :loading="index === 0 ? 'eager' : 'lazy'"
-        >
+        />
       </div>
       <template v-for="arrow in ARROW_COMPONENT" :key="arrow.id" #[arrow.id]>
         <div

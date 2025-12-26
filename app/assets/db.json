@@ -2,19 +2,19 @@
   "banners": [
     {
       "id": 1,
-      "img": "img/banner/coffee.webp",
+      "img": "img/banner/coffee",
       "link": "store",
       "alt": "coffee"
     },
     {
       "id": 2,
-      "img": "img/banner/drink.webp",
+      "img": "img/banner/drink",
       "link": "menu/list/3",
       "alt": "drink"
     },
     {
       "id": 3,
-      "img": "img/banner/dessert.webp",
+      "img": "img/banner/dessert",
       "alt": "dessert"
     }
   ],
@@ -23,28 +23,28 @@
       "id": 4,
       "title": "憑振興放送券，享經典拿鐵、經典黑咖啡88折",
       "introduction": "咖啡是最溫暖的顏色，最療癒的能量飲，對抗疫情期間，大家都辛苦了，讓我們一同攜手振興未來，開心喝咖啡",
-      "img": "img/newsView/id4.webp",
+      "img": "img/newsView/id4",
       "type": 1
     },
     {
       "id": 3,
       "title": "好日子咖啡輕食x知名植物奶品牌OATLY聯名",
       "introduction": "OATLY燕麥奶選用來自北歐優質燕麥製成，不添加防腐劑或甜味劑，打造美味健康的植物奶！",
-      "img": "img/newsView/id3.webp",
+      "img": "img/newsView/id3",
       "type": 2
     },
     {
       "id": 2,
       "title": "12月會員日，享年度最低85折優惠",
       "introduction": "所有來客消費咖啡系列任一品項，享買一送一優惠，搭配指定甜點享九折優惠！",
-      "img": "img/newsView/id2.webp",
+      "img": "img/newsView/id2",
       "type": 1
     },
     {
       "id": 1,
       "title": "11月限定！國際咖啡節優惠享不完",
       "introduction": "所有來客消費咖啡系列任一品項，享買一送一優惠，搭配指定甜點享九折優惠！",
-      "img": "img/newsView/id1.webp",
+      "img": "img/newsView/id1",
       "type": 1
     }
   ],
@@ -53,8 +53,8 @@
       "id": 1,
       "name": "冰心莓果優格",
       "link": "/menu/list/1",
-      "img": "img/menuGoods/cakeB.webp",
-      "indexImg": "img/indexMenu/fruitYogurt.webp",
+      "img": "img/menuGoods/cakeB",
+      "indexImg": "img/indexMenu/fruitYogurt",
       "indexImagePCSize": [
         287,
         496
@@ -68,10 +68,10 @@
       "tag": [],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeB.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeB",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "選用香水草莓，果香濃郁且酸甜平衡，搭配細緻滑順的優格基底，每一口都清爽無負擔",
@@ -93,8 +93,8 @@
       "id": 2,
       "name": "義式黑巧拿鐵",
       "link": "/menu/list/2",
-      "img": "img/menuGoods/cakeH.webp",
-      "indexImg": "img/indexMenu/chocolateLatte.webp",
+      "img": "img/menuGoods/cakeH",
+      "indexImg": "img/indexMenu/chocolateLatte",
       "indexImagePCSize": [
         347,
         205
@@ -108,10 +108,10 @@
       "tag": [],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeH.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeH",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "濃郁的義式巧克力與香醇咖啡完美結合，入口香甜，餘韻醇厚",
@@ -133,8 +133,8 @@
       "id": 3,
       "name": "清爽西瓜特調",
       "link": "/menu/list/3",
-      "img": "img/menuGoods/cakeG.webp",
-      "indexImg": "img/indexMenu/refreshingWatermelonSpecial.webp",
+      "img": "img/menuGoods/cakeG",
+      "indexImg": "img/indexMenu/refreshingWatermelonSpecial",
       "indexImagePCSize": [
         386,
         205
@@ -150,10 +150,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeG.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeG",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "清甜多汁的西瓜風味，結合微酸的檸檬特調，帶來夏日清涼口感",
@@ -175,8 +175,8 @@
       "id": 4,
       "name": "熱壓蘑菇芝士",
       "link": "/menu/list/4",
-      "img": "img/menuGoods/cakeJ.webp",
-      "indexImg": "img/indexMenu/mushroomSandwich.webp",
+      "img": "img/menuGoods/cakeJ",
+      "indexImg": "img/indexMenu/mushroomSandwich",
       "indexImagePCSize": [
         219,
         282
@@ -192,10 +192,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeJ.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeJ",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "濃郁芝士香搭配嫩滑蘑菇，麵包酥脆，內餡濃厚，層次豐富",
@@ -217,8 +217,8 @@
       "id": 5,
       "name": "莓果幕斯塔",
       "link": "/menu/list/5",
-      "img": "img/menuGoods/cakeE.webp",
-      "indexImg": "img/indexMenu/berryMousta.webp",
+      "img": "img/menuGoods/cakeE",
+      "indexImg": "img/indexMenu/berryMousta",
       "indexImagePCSize": [
         337,
         282
@@ -234,10 +234,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeE.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeE",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "濃郁的莓果風味，搭配柔滑的慕斯質地，入口即化，酸甜平衡，層次豐富",
@@ -259,8 +259,8 @@
       "id": 6,
       "name": "法式馬卡龍",
       "link": "/menu/list/6",
-      "img": "img/menuGoods/cakeK.webp",
-      "indexImg": "img/indexMenu/macaron.webp",
+      "img": "img/menuGoods/cakeK",
+      "indexImg": "img/indexMenu/macaron",
       "indexImagePCSize": [
         168,
         138
@@ -274,10 +274,10 @@
       "tag": [],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeK.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeK",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "酥脆外殼搭配柔滑內餡，提供抹茶、香草、巧克力、草莓等多種口味，層次豐富，甜而不膩",
@@ -299,8 +299,8 @@
       "id": 7,
       "name": "抹茶生乳捲",
       "link": "/menu/list/7",
-      "img": "img/menuGoods/cakeF.webp",
-      "indexImg": "img/indexMenu/matchaMilkRoll.webp",
+      "img": "img/menuGoods/cakeF",
+      "indexImg": "img/indexMenu/matchaMilkRoll",
       "indexImagePCSize": [
         168,
         138
@@ -314,10 +314,10 @@
       "tag": [],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeF.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeF",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "濃厚的靜岡抹茶香氣與柔滑的生乳餡相結合，微苦帶甜，尾韻悠長",
@@ -339,8 +339,8 @@
       "id": 8,
       "name": "靜岡抹茶拿鐵",
       "link": "/menu/list/8",
-      "img": "img/menuGoods/cakeI.webp",
-      "indexImg": "img/menuGoods/cakeI.webp",
+      "img": "img/menuGoods/cakeI",
+      "indexImg": "img/menuGoods/cakeI",
       "indexImagePCSize": [
         580,
         580
@@ -354,10 +354,10 @@
       "tag": [],
       "detail": {
         "imgs": [
-          "img/menuGoods/cakeI.webp",
-          "img/menuGoods/cakeA.webp",
-          "img/menuGoods/cakeC.webp",
-          "img/menuGoods/cakeD.webp"
+          "img/menuGoods/cakeI",
+          "img/menuGoods/cakeA",
+          "img/menuGoods/cakeC",
+          "img/menuGoods/cakeD"
         ],
         "features": {
           "flavor": "清新細膩的抹茶香氣，結合濃郁的奶香，茶與奶的比例完美調和",
@@ -381,7 +381,7 @@
       "id": 1,
       "name": "衣索比亞 厭氧日曬 罕貝拉 瓦米納鎮 迪奇朵村",
       "link": "/store/1",
-      "img": "img/storeGoods/coffeeE.webp",
+      "img": "img/storeGoods/coffeeE",
       "price": 260,
       "onSale": 230,
       "type": 1,
@@ -391,10 +391,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeE.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeE",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "熱帶水果，莓果，蜜糖",
@@ -417,7 +417,7 @@
       "id": 2,
       "name": "瓜地馬拉 水洗 Rosma莊園 Maragogype種",
       "link": "/store/2",
-      "img": "img/storeGoods/coffeeJ.webp",
+      "img": "img/storeGoods/coffeeJ",
       "price": 220,
       "type": 2,
       "tag": [
@@ -425,10 +425,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeJ.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeJ",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "巧克力，堅果，太妃糖",
@@ -451,7 +451,7 @@
       "id": 3,
       "name": "印尼 曼特寧 半水洗",
       "link": "/store/3",
-      "img": "img/storeGoods/coffeeF.webp",
+      "img": "img/storeGoods/coffeeF",
       "price": 200,
       "type": 3,
       "tag": [
@@ -459,10 +459,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeF.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeF",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "泥土氣息，黑巧克力，煙燻調",
@@ -485,7 +485,7 @@
       "id": 4,
       "name": "肯亞 AA Top Kamwangi",
       "link": "/store/4",
-      "img": "img/storeGoods/coffeeG.webp",
+      "img": "img/storeGoods/coffeeG",
       "price": 250,
       "type": 1,
       "tag": [
@@ -494,10 +494,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeG.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeG",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "黑加侖子，柑橘，葡萄",
@@ -520,16 +520,16 @@
       "id": 5,
       "name": "宏都拉斯 水洗 El Puente莊園",
       "link": "/store/5",
-      "img": "img/storeGoods/coffeeH.webp",
+      "img": "img/storeGoods/coffeeH",
       "price": 230,
       "type": 1,
       "tag": [],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeH.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeH",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "花香，橘皮，蜜糖",
@@ -552,7 +552,7 @@
       "id": 6,
       "name": "哥倫比亞 日曬 Pink Bourbon",
       "link": "/store/6",
-      "img": "img/storeGoods/coffeeJ.webp",
+      "img": "img/storeGoods/coffeeJ",
       "price": 280,
       "onSale": 250,
       "type": 1,
@@ -561,10 +561,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeJ.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeJ",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "莓果，柑橘，花香",
@@ -587,7 +587,7 @@
       "id": 7,
       "name": "巴西 Pulped Natural Yellow Bourbon",
       "link": "/store/7",
-      "img": "img/storeGoods/coffeeF.webp",
+      "img": "img/storeGoods/coffeeF",
       "price": 210,
       "type": 2,
       "tag": [
@@ -596,10 +596,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeF.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeF",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "焦糖，堅果，牛奶巧克力",
@@ -622,17 +622,17 @@
       "id": 8,
       "name": "薩爾瓦多 黑蜜處理 Pacamara",
       "link": "/store/8",
-      "img": "img/storeGoods/coffeeI.webp",
+      "img": "img/storeGoods/coffeeI",
       "price": 300,
       "onSale": 280,
       "type": 2,
       "tag": [],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeI.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeI",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "黑莓，葡萄乾，蜂蜜",
@@ -655,7 +655,7 @@
       "id": 9,
       "name": "巴拿馬 翡翠莊園 Hacienda La Esmeralda",
       "link": "/store/9",
-      "img": "img/storeGoods/coffeeG.webp",
+      "img": "img/storeGoods/coffeeG",
       "price": 400,
       "type": 1,
       "tag": [
@@ -663,10 +663,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeG.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeG",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "茉莉花，柑橘，桃子",
@@ -689,7 +689,7 @@
       "id": 10,
       "name": "印度 雨季馬拉巴 Malabar Monsooned",
       "link": "/store/10",
-      "img": "img/storeGoods/coffeeE.webp",
+      "img": "img/storeGoods/coffeeE",
       "price": 200,
       "type": 3,
       "tag": [
@@ -698,10 +698,10 @@
       ],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeE.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeE",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "木質香氣，奶油，香料",
@@ -724,17 +724,17 @@
       "id": 11,
       "name": "威士忌酒漬咖啡禮盒 限量瓶裝豆版",
       "link": "/store/11",
-      "img": "img/storeGoods/coffeeK.webp",
+      "img": "img/storeGoods/coffeeK",
       "price": 600,
       "onSale": 520,
       "type": 4,
       "tag": [],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeK.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeC.webp"
+          "img/storeGoods/coffeeK",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeC"
         ],
         "features": {
           "flavor": "蜜瓜，紅蘋果，蜂蜜",
@@ -757,16 +757,16 @@
       "id": 12,
       "name": "璀璨之星濾掛咖啡禮盒(18入) 隨機口味各3包",
       "link": "/store/12",
-      "img": "img/storeGoods/coffeeK.webp",
+      "img": "img/storeGoods/coffeeK",
       "price": 480,
       "type": 4,
       "tag": [],
       "detail": {
         "imgs": [
-          "img/storeGoods/coffeeK.webp",
-          "img/storeGoods/coffeeA.webp",
-          "img/storeGoods/coffeeB.webp",
-          "img/storeGoods/coffeeD.webp"
+          "img/storeGoods/coffeeK",
+          "img/storeGoods/coffeeA",
+          "img/storeGoods/coffeeB",
+          "img/storeGoods/coffeeD"
         ],
         "features": {
           "flavor": "可可，葡萄乾，濃郁水果",

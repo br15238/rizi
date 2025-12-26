@@ -45,8 +45,6 @@ const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
                 :src="`${baseURL}img/icon/${type.type}.webp`"
                 :alt="type.label"
                 class="aspect-square !align-bottom"
-                width="24"
-                height="24"
               >
             </div>
             <div>

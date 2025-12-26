@@ -45,10 +45,8 @@ const HEAD_OFFICE_INFO = SHOP_INFO.find(x => x.id === 1) as InfoDataType
               >
                 <img
                   :src="`${baseURL}img/icon/${item.type}.webp`"
-                  class="mr-[2px]"
+                  class="mr-[2px] aspect-square"
                   :alt="item.label"
-                  width="14"
-                  height="14"
                 >
                 <span class="tracking-[0.08em]">{{ HEAD_OFFICE_INFO[item.type as keyof InfoDataType] }}</span>
               </div>
@@ -89,9 +87,7 @@ const HEAD_OFFICE_INFO = SHOP_INFO.find(x => x.id === 1) as InfoDataType
             <img
               :src="`${baseURL}img/icon/${sns.type}.webp`"
               :alt="sns.type"
-              class="transition duration-[.3s] hover:translate-y-[-10px]"
-              width="23"
-              height="23"
+              class="transition duration-[.3s] hover:translate-y-[-10px] aspect-square"
             >
           </a>
         </div>

@@ -26,7 +26,7 @@ const { app: { baseURL } } = useRuntimeConfig()
       <div class="w-full md:w-[50%]">
         <img
           :src="`${baseURL}${item.img}`"
-          class="object-cover w-full h-full"
+          class="object-cover w-full h-full aspect-[500/250]"
           :alt="item.name"
         >
       </div>

@@ -18,14 +18,11 @@ export const sendEmail = async (templateKey: string, formData: any, callback?: (
 }
 
 export const getSrc = (
-  url?: string,
+  url: string,
   size: 'phone' | 'pc' = 'pc',
   domain = true
 ) => {
-  if (!url) return ''
-
   const { app: { baseURL } } = useRuntimeConfig()
-
   const formatted = url.replace(/(\.webp)$/, `-${size}$1`)
   return domain ? `${baseURL}${formatted}` : formatted
 }
