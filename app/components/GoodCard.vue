@@ -22,9 +22,11 @@ const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data
       >
         <img
           :src="getSrc(img, 'phone', true)"
+          :srcset="getSrcSet(img, [166, 213])"
+          sizes="(max-width: 412px) 166px, 213px"
           :alt="name"
-          width="280"
-          height="280"
+          width="166"
+          height="166"
           class="w-full rounded-t-[10px] aspect-square"
         >
       </div>

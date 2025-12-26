@@ -15,11 +15,18 @@ const { app: { baseURL } } = useRuntimeConfig()
         data-aos-duration="800"
         data-aos-easing="ease-in-sine"
       >
-        <img
-          :src="`${baseURL}img/brand/index.gif`"
-          alt="環境氛圍"
-          class="w-full w-[421px] aspect-[748/387]"
+        <video
+          :src="`${baseURL}img/brand/index.mp4`"
+          autoplay
+          loop
+          muted
+          playsinline
+          aria-label="環境氛圍動畫"
+          class="w-full w-[421px] aspect-[748/387] object-cover rounded-lg"
         >
+          <source :src="`${baseURL}img/brand/index.mp4`" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
       </div>
       <div
         class="w-[80%] conceptFull:w-[234px] ml-0 conceptFull:ml-[9%] text-justify"

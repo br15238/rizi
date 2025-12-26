@@ -55,8 +55,14 @@
       "link": "/menu/list/1",
       "img": "img/menuGoods/cakeB.webp",
       "indexImg": "img/indexMenu/fruitYogurt.webp",
-      "indexImageWidth": 291,
-      "indexImageHeight": 520,
+      "indexImagePCSize": [
+        287,
+        496
+      ],
+      "indexImagePhoneSize": [
+        186,
+        332
+      ],
       "price": 120,
       "type": 3,
       "tag": [],
@@ -89,8 +95,14 @@
       "link": "/menu/list/2",
       "img": "img/menuGoods/cakeH.webp",
       "indexImg": "img/indexMenu/chocolateLatte.webp",
-      "indexImageWidth": 364,
-      "indexImageHeight": 215,
+      "indexImagePCSize": [
+        347,
+        205
+      ],
+      "indexImagePhoneSize": [
+        377,
+        223
+      ],
       "price": 160,
       "type": 1,
       "tag": [],
@@ -123,11 +135,19 @@
       "link": "/menu/list/3",
       "img": "img/menuGoods/cakeG.webp",
       "indexImg": "img/indexMenu/refreshingWatermelonSpecial.webp",
-      "indexImageWidth": 405,
-      "indexImageHeight": 215,
+      "indexImagePCSize": [
+        386,
+        205
+      ],
+      "indexImagePhoneSize": [
+        205,
+        109
+      ],
       "price": 100,
       "type": 2,
-      "tag": [1],
+      "tag": [
+        1
+      ],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeG.webp",
@@ -157,11 +177,19 @@
       "link": "/menu/list/4",
       "img": "img/menuGoods/cakeJ.webp",
       "indexImg": "img/indexMenu/mushroomSandwich.webp",
-      "indexImageWidth": 372,
-      "indexImageHeight": 479,
+      "indexImagePCSize": [
+        219,
+        282
+      ],
+      "indexImagePhoneSize": [
+        262,
+        338
+      ],
       "price": 100,
       "type": 4,
-      "tag": [1],
+      "tag": [
+        1
+      ],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeJ.webp",
@@ -191,11 +219,19 @@
       "link": "/menu/list/5",
       "img": "img/menuGoods/cakeE.webp",
       "indexImg": "img/indexMenu/berryMousta.webp",
-      "indexImageWidth": 353,
-      "indexImageHeight": 295,
+      "indexImagePCSize": [
+        337,
+        282
+      ],
+      "indexImagePhoneSize": [
+        268,
+        224
+      ],
       "price": 130,
       "type": 3,
-      "tag": [1],
+      "tag": [
+        1
+      ],
       "detail": {
         "imgs": [
           "img/menuGoods/cakeE.webp",
@@ -225,8 +261,14 @@
       "link": "/menu/list/6",
       "img": "img/menuGoods/cakeK.webp",
       "indexImg": "img/indexMenu/macaron.webp",
-      "indexImageWidth": 372,
-      "indexImageHeight": 305,
+      "indexImagePCSize": [
+        168,
+        138
+      ],
+      "indexImagePhoneSize": [
+        186,
+        153
+      ],
       "price": 130,
       "type": 3,
       "tag": [],
@@ -259,8 +301,14 @@
       "link": "/menu/list/7",
       "img": "img/menuGoods/cakeF.webp",
       "indexImg": "img/indexMenu/matchaMilkRoll.webp",
-      "indexImageWidth": 372,
-      "indexImageHeight": 305,
+      "indexImagePCSize": [
+        168,
+        138
+      ],
+      "indexImagePhoneSize": [
+        186,
+        153
+      ],
       "price": 130,
       "type": 3,
       "tag": [],
@@ -293,8 +341,14 @@
       "link": "/menu/list/8",
       "img": "img/menuGoods/cakeI.webp",
       "indexImg": "img/menuGoods/cakeI.webp",
-      "indexImageWidth": 580,
-      "indexImageHeight": 580,
+      "indexImagePCSize": [
+        580,
+        580
+      ],
+      "indexImagePhoneSize": [
+        280,
+        280
+      ],
       "price": 160,
       "type": 1,
       "tag": [],
@@ -331,7 +385,10 @@
       "price": 260,
       "onSale": 230,
       "type": 1,
-      "tag": [0, 1],
+      "tag": [
+        0,
+        1
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeE.webp",
@@ -363,7 +420,9 @@
       "img": "img/storeGoods/coffeeJ.webp",
       "price": 220,
       "type": 2,
-      "tag": [0],
+      "tag": [
+        0
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeJ.webp",
@@ -395,7 +454,9 @@
       "img": "img/storeGoods/coffeeF.webp",
       "price": 200,
       "type": 3,
-      "tag": [0],
+      "tag": [
+        0
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeF.webp",
@@ -427,7 +488,10 @@
       "img": "img/storeGoods/coffeeG.webp",
       "price": 250,
       "type": 1,
-      "tag": [0, 1],
+      "tag": [
+        0,
+        1
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeG.webp",
@@ -492,7 +556,9 @@
       "price": 280,
       "onSale": 250,
       "type": 1,
-      "tag": [0],
+      "tag": [
+        0
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeJ.webp",
@@ -524,7 +590,10 @@
       "img": "img/storeGoods/coffeeF.webp",
       "price": 210,
       "type": 2,
-      "tag": [0, 1],
+      "tag": [
+        0,
+        1
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeF.webp",
@@ -589,7 +658,9 @@
       "img": "img/storeGoods/coffeeG.webp",
       "price": 400,
       "type": 1,
-      "tag": [0],
+      "tag": [
+        0
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeG.webp",
@@ -621,7 +692,10 @@
       "img": "img/storeGoods/coffeeE.webp",
       "price": 200,
       "type": 3,
-      "tag": [0, 1],
+      "tag": [
+        0,
+        1
+      ],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeE.webp",

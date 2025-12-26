@@ -19,7 +19,7 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
 </script>
 
 <template>
-  <section class="mt-[2%] aspect-[12/5]">
+  <section class="mt-[2%] aspect-[1280/533]">
     <a-carousel arrows autoplay>
       <div
         v-for="(item, index) in bannerList"
@@ -31,12 +31,12 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
         @keyup.enter="item.link && handleOpenNewTab(item.link)"
       >
         <img
-          class="w-full h-auto aspect-[12/5]"
+          class="w-full h-auto aspect-[1280/533]"
           :src="getSrc(item.img, 'phone', false)"
-          :srcset="getSrcSet(item.img, [546, 1200])"
-          sizes="(max-width: 546px) 546px, 1200px"
-          width="1200"
-          height="500"
+          :srcset="getSrcSet(item.img, [412, 1280])"
+          sizes="(max-width: 412px) 412px, 1280px"
+          width="1280"
+          height="533"
           :alt="item.alt || 'Banner'"
           :fetchpriority="index === 0 ? 'high' : 'auto'"
           :loading="index === 0 ? 'eager' : 'lazy'"

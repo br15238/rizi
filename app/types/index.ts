@@ -63,14 +63,14 @@ export type GoodType<T extends CakeDetailType | CoffeeDetailType> = {
   detail: T
 } & (T extends CoffeeDetailType
   ? {
-      count?: number
-      checked?: boolean
-    }
+    count?: number
+    checked?: boolean
+  }
   : {
-      indexImg: string
-      indexImageWidth: number
-      indexImageHeight: number
-    })
+    indexImg: string
+    indexImagePCSize: [number, number]
+    indexImagePhoneSize: [number, number]
+  })
 
 export type NewsModelType = {
   isOpen: boolean

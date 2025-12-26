@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useRuntimeConfig } from '#imports'
 import { computed, ref } from 'vue'
 
 import { useMenuList } from '@/composables/useMenu'
@@ -7,7 +6,6 @@ import { useMenuList } from '@/composables/useMenu'
 const query = ref({ page: 1, pageSize: 7 })
 const { data } = await useMenuList(query)
 const list = computed(() => data.value.list)
-const { app: { baseURL } } = useRuntimeConfig()
 
 </script>
 
@@ -44,9 +42,11 @@ const { app: { baseURL } } = useRuntimeConfig()
           </div>
           <div class="w-full h-full overflow-hidden">
             <img
-              :src="`${baseURL}${item.indexImg}`"
+              :src="getSrc(item.indexImg, 'phone', false)"
+              :srcset="getSrcSet(item.indexImg, [item.indexImagePhoneSize[0], item.indexImagePCSize[0]])"
+              :sizes="`(max-width: 412px) ${item.indexImagePhoneSize[0]}px, ${item.indexImagePCSize[0]}px`"
               :alt="item.name"
-              :style="{width: item.indexImageWidth, height: item.indexImageHeight}"
+              :style="{ width: item.indexImagePCSize[0], height: item.indexImagePCSize[1] }"
               class="w-full !h-full object-cover object-center"
               :class="{
                 'max-phone:!object-left': item.name === '熱壓蘑菇芝士',
