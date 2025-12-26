@@ -24,7 +24,7 @@ const { app: { baseURL } } = useRuntimeConfig()
 
 <template>
   <picture>
-    <source media="(max-width: 412px)" :srcset="`${baseURL}${props.src}-phobe.webp`" type="image/webp">
+    <source media="(max-width: 412px)" :srcset="`${baseURL}${props.src}-phone.webp`" type="image/webp">
     <source :media="`(min-width: ${props.media}px)`" :srcset="`${baseURL}${props.src}-pc.webp`" type="image/webp">
     <img
       :src="`${baseURL}${props.src}.webp`"
