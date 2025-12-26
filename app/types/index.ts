@@ -68,8 +68,8 @@ export type GoodType<T extends CakeDetailType | CoffeeDetailType> = {
   }
   : {
     indexImg: string
-    indexImagePCSize: [number, number]
-    indexImagePhoneSize: [number, number]
+    indexImagePCSize: [number, number] | number[]
+    indexImagePhoneSize: [number, number] | number[]
   })
 
 export type NewsModelType = {
