@@ -26,7 +26,7 @@ const handleChangeNews = (type: 'next' | 'prev') => {
 
 <template>
   <a-modal v-model:open="props.isOpen" :title="props.data.title" @cancel="closeModal">
-    <img :src="`${baseURL}${props.data.img}`" class="w-full aspect-[475/300]" :alt="props.data.title">
+    <img :src="`${baseURL}${props.data.img}`" class="w-full aspect-[475/300] w-[475px]" :alt="props.data.title">
     <p class="mt-[6px]">
       {{ props.data.introduction }}
     </p>

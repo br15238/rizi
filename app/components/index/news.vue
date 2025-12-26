@@ -54,7 +54,7 @@ const handleOpenModal = (article: NewsType) => {
         </div>
         <div class="ml-[6px] grayscale-100 opacity-50 group-hover:grayscale-0 group-hover:opacity-100">
           <img
-            class="!block aspect-square"
+            class="!block aspect-square w-[20px]"
             src="/img/icon/moreOutline.svg"
             alt="看更多"
           >

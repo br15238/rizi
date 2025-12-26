@@ -81,7 +81,7 @@ const handleOpenModal = (data: NewsType) => {
           <img
             :src="`${baseURL}${news.img}`"
             :alt="news.title"
-            class="w-full transition-transform duration-[.3s] hover:scale-[1.2] aspect-[475/300]"
+            class="w-full transition-transform duration-[.3s] hover:scale-[1.2] aspect-[475/300] w-[475px]"
           >
         </div>
         <div class="p-[0_4%]">

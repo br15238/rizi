@@ -123,7 +123,7 @@ const handleSendEmail = () => {
       <img
         src="/img/icon/mail.webp"
         alt="信箱"
-        class="mr-[8px] aspect-square"
+        class="mr-[8px] aspect-square w-[24px]"
       >
       真的會收到信件哦！
     </p>

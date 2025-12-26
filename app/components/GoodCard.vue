@@ -20,13 +20,7 @@ const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data
         class="relative"
         :class="{ 'after:content-[attr(tag)] after:box-content after:leading-[12px] after:text-[12px] after:text-[var(--mainTxt)] after:absolute after:right-[-5px] after:top-[10px] after:w-[40px] after:h-[19px] after:p-[5px_5px_0px_7px] after:bg-[var(--tagBG)] before:content-[\'\'] before:absolute before:right-[-5px] before:top-[34px] before:border-t-5 before:border-r-5 before:border-r-transparent before:border-[var(--deepGray)]': tag?.includes(1) }"
       >
-        <img
-          :src="getSrc(img, 'phone', true)"
-          :srcset="getSrcSet(img, [166, 213])"
-          sizes="(max-width: 412px) 100vw, 213px"
-          :alt="name"
-          class="w-full rounded-t-[10px] aspect-square"
-        >
+        <ResponsiveImg img-class="w-full rounded-t-[10px] aspect-square w-[213px]" :src="img" :alt="name" />
       </div>
       <div class="flex flex-col flex-1 p-[5%_8%_7%] relative">
         <button

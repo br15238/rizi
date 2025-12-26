@@ -51,7 +51,7 @@ const list = computed(() => data.value.list)
                 '!object-top': item.name === '冰心莓果優格',
                 'max-menuSm:!object-top': item.name === '莓果幕斯塔'
               }"
-              :img-style="{ aspectRatio: `${item.indexImagePCSize[0]}/${item.indexImagePCSize[1]}` }"
+              :img-style="{ aspectRatio: `${item.indexImagePCSize[0]}/${item.indexImagePCSize[1]}`,width:item.indexImagePCSize[0] }"
             />
           </div>
         </NuxtLink>

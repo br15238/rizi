@@ -49,7 +49,7 @@ onBeforeUnmount(() => {
               src="/img/logo.webp"
               alt="RIZI COFF HOUSE"
               fetchpriority="high"
-              clss="aspect-[144/30]"
+              class="w-[144px] h-[30px]"
             >
           </NuxtLink>
         </h1>

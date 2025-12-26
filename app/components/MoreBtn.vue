@@ -20,7 +20,7 @@ const { app: { baseURL } } = useRuntimeConfig()
       <img
         :src="`${baseURL}img/icon/more.svg`"
         alt="看更多"
-        class="!align-sub ml-[5px] grayscale-100 opacity-50 group-hover:grayscale-0 group-hover:opacity-100 aspect-square"
+        class="!align-sub ml-[5px] grayscale-100 opacity-50 group-hover:grayscale-0 group-hover:opacity-100 aspect-square w-[20px]"
       >
     </div>
   </div>
