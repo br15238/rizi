@@ -10,8 +10,10 @@ export const useResponsiveImage = () => {
   }
 
   onMounted(() => {
-    updateBreakpoint()
-    window.addEventListener('resize', updateBreakpoint)
+    requestIdleCallback?.(() => {
+      updateBreakpoint()
+      window.addEventListener('resize', updateBreakpoint)
+    })
   })
 
   onUnmounted(() => {

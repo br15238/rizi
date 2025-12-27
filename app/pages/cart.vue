@@ -107,7 +107,9 @@ watch(() => cartData.value.map(x => x.checked), (newValue) => {
 })
 
 onMounted(() => {
-  checkBoxStatus(cartData.value.map(x => x.checked))
+  requestIdleCallback?.(() => {
+    checkBoxStatus(cartData.value.map(x => x.checked))
+  })
 })
 </script>
 

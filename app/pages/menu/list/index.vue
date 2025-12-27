@@ -35,7 +35,9 @@ const handleTabClick = (index: number) => {
 }
 
 onMounted(() => {
-  if (route.query && route.query.type) router.replace({ query: {} })
+  requestIdleCallback?.(() => {
+    if (route.query && route.query.type) router.replace({ query: {} })
+  })
 })
 </script>
 
