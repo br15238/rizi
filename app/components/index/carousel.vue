@@ -21,7 +21,7 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
   <section class="mt-[2%] aspect-[1280/533]">
     <a-carousel arrows autoplay :autoplay-speed="3500">
       <div
-        v-for="(item, index) in bannerList"
+        v-for="item in bannerList"
         :key="item.id"
         :class="{ 'cursor-pointer': item.link }"
         role="button"
@@ -33,8 +33,8 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
           img-class="w-full h-auto aspect-[1280/533]"
           :src="item.img"
           :alt="item.alt || 'Banner'"
-          :fetchpriority="index === 0 ? 'high' : undefined"
-          :loading="index === 0 ? 'eager' : 'lazy'"
+          :fetchpriority="'high'"
+          :loading="'eager'"
         />
       </div>
       <template v-for="arrow in ARROW_COMPONENT" :key="arrow.id" #[arrow.id]>

@@ -556,9 +556,7 @@
       "price": 280,
       "onSale": 250,
       "type": 1,
-      "tag": [
-        0
-      ],
+      "tag": [],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeJ",
@@ -591,7 +589,6 @@
       "price": 210,
       "type": 2,
       "tag": [
-        0,
         1
       ],
       "detail": {
@@ -658,9 +655,7 @@
       "img": "img/storeGoods/coffeeG",
       "price": 400,
       "type": 1,
-      "tag": [
-        0
-      ],
+      "tag": [],
       "detail": {
         "imgs": [
           "img/storeGoods/coffeeG",
@@ -693,7 +688,6 @@
       "price": 200,
       "type": 3,
       "tag": [
-        0,
         1
       ],
       "detail": {
