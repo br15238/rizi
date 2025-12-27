@@ -22,8 +22,10 @@ watch(
 )
 
 onMounted(() => {
-  window.addEventListener('resize', handleResize)
-  handleResize()
+  requestIdleCallback?.(() => {
+    window.addEventListener('resize', handleResize)
+    handleResize()
+  })
 })
 
 onBeforeUnmount(() => {

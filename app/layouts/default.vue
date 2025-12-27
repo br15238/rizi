@@ -8,13 +8,15 @@ const colorPrimary = ref('#702222')
 const colorTextBase = ref('#505050')
 
 onMounted(() => {
-  const rootStyle = getComputedStyle(document.documentElement)
-
-  const mainRed = rootStyle.getPropertyValue('--mainRed').trim()
-  const mainTxt = rootStyle.getPropertyValue('--mainTxt').trim()
-
-  if (mainRed) colorPrimary.value = mainRed
-  if (mainTxt) colorTextBase.value = mainTxt
+  requestIdleCallback?.(() => {
+    const rootStyle = getComputedStyle(document.documentElement)
+  
+    const mainRed = rootStyle.getPropertyValue('--mainRed').trim()
+    const mainTxt = rootStyle.getPropertyValue('--mainTxt').trim()
+  
+    if (mainRed) colorPrimary.value = mainRed
+    if (mainTxt) colorTextBase.value = mainTxt
+  })
 })
 
 const showBreadcrumb = computed(() => route.path !== '/')
