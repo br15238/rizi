@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import critical from 'vite-plugin-critical'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineNuxtConfig({
@@ -26,28 +28,18 @@ export default defineNuxtConfig({
   ],
   app: {
     baseURL: isProd ? '/rizi/' : '/',
-    head: {
-      style: [
-        {
-          innerHTML: `
-            html, body {
-              margin: 0;
-              font-family: "Noto Sans TC", sans-serif;
-            }
-
-            #__nuxt {
-              width: 100%;
-              min-height: 100vh;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
-              
-            .contentWrap { width: 100%; max-width:1080px; margin:0 auto; display:flex; flex-direction:column; padding:0 4%; }
-            img { display:inline; vertical-align:middle; }
-          `
-        }
-      ]
-    }
+  },
+  vite: {
+    plugins: [
+      isProd && critical({
+        criticalBase: '.output/public',
+        criticalPages: [{ url: '/rizi/', template: 'index.html' }],
+        inline: true,
+        extract: true,
+        minify: true,
+        width: 1300,
+        height: 900,
+      })
+    ].filter(Boolean)
   }
 })
