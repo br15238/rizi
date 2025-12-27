@@ -26,8 +26,9 @@ const { app: { baseURL } } = useRuntimeConfig()
   <picture>
     <source media="(max-width: 412px)" :srcset="`${baseURL}${props.src}-phone.webp`" type="image/webp">
     <source :media="`(min-width: ${props.media}px)`" :srcset="`${baseURL}${props.src}-pc.webp`" type="image/webp">
+    <source :srcset="`${baseURL}${props.src}.jpg`" type="image/jpeg">
     <img
-      :src="`${baseURL}${props.src}.webp`"
+      :src="`${baseURL}${props.src}.jpg`"
       :alt="props.alt"
       :fetchpriority="props.fetchpriority"
       :loading="props.loading"

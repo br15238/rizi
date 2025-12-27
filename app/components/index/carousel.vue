@@ -19,7 +19,7 @@ const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
 
 <template>
   <section class="mt-[2%] aspect-[1280/533]">
-    <a-carousel arrows autoplay>
+    <a-carousel arrows autoplay :autoplay-speed="3500">
       <div
         v-for="(item, index) in bannerList"
         :key="item.id"

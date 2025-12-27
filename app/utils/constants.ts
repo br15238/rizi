@@ -30,7 +30,7 @@ export const SHOP_INFO: InfoDataType[] = [
     opening: '09:00 - 20:30',
     address: '高雄市新庄仔路A07號',
     mail: 'RIZI@gmail.com',
-    img: 'img/map/xinzhuang.webp',
+    img: 'img/map/xinzhuang',
     aos: 'fade-down',
   },
   {
@@ -40,7 +40,7 @@ export const SHOP_INFO: InfoDataType[] = [
     opening: '09:00 - 20:30',
     address: '嘉義縣祥和三路東段A05號',
     mail: 'RIZI@gmail.com',
-    img: 'img/map/taibao.webp',
+    img: 'img/map/taibao',
     aos: 'fade-up',
   },
   {
@@ -50,7 +50,7 @@ export const SHOP_INFO: InfoDataType[] = [
     opening: '08:00 - 20:00',
     address: '台中市北區健行路A2號',
     mail: 'RIZI@gmail.com',
-    img: 'img/map/jiansing.webp',
+    img: 'img/map/jiansing',
     aos: 'fade-down',
   }
 ]

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { useResponsiveImage } from '@/composables/useResponsiveImage'
+import { useRuntimeConfig } from '#imports'
+
 import type { InfoDataType } from '@/types'
 import { SHOP_INFO_TYPE, SHOP_INFO } from '@/utils/constants'
 
+const { app: { baseURL } } = useRuntimeConfig()
 const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
-const { getResponsiveAttrs, baseURL } = useResponsiveImage()
+
 </script>
 
 <template>
@@ -20,11 +22,7 @@ const { getResponsiveAttrs, baseURL } = useResponsiveImage()
         data-aos-easing="ease-in-sine"
       >
         <div class="w-full infoSm:w-[55%] md:w-full infoSm:mr-[8px] flex">
-          <a-image
-            v-bind="getResponsiveAttrs(item.img)"
-            :alt="item.name"
-            class="w-full w-[282px] aspect-[282/220]"
-          />
+          <ResponsiveImg img-class="w-full w-[282px] aspect-[282/220]" :src="item.img" :alt="item.name" />
         </div>
         <div class="w-full max-w-[282px] infoSm:max-w-none infoSm:w-[45%] md:w-full m-auto">
           <h3
