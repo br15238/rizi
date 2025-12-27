@@ -32,9 +32,9 @@ useHead({
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}img/favicon.svg` },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap' }
+    // { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous' },
+    // { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+    // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap' }
   ]
 })
 </script>
