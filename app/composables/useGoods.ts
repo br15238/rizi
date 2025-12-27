@@ -21,7 +21,7 @@ export const useGoodsList = (params: Ref<{
 }>) => {
   const { goodsList } = useGoodsSharedState()
   return useAsyncData(
-    `goods:${JSON.stringify(toValue(params))}`,
+    'goods-list',
     async () => {
       const res = (await simulateGoodsApi(
         params.value,
@@ -32,7 +32,7 @@ export const useGoodsList = (params: Ref<{
     {
       server: true,
       default: () => ({ list: [], total: 0 }) as ApiListResponse<GoodType<CoffeeDetailType>>,
-      watch: [() => ({ ...params.value })]
+      watch: [params]
     }
   )
 }
@@ -40,7 +40,7 @@ export const useGoodsList = (params: Ref<{
 export const useGoodsDetail = (id: Ref<number>) => {
   const { currentTitle } = useBreadcrumb()
   return useAsyncData(
-    `goods:${JSON.stringify(toValue(id.value))}`,
+    'goods-detail',
     async () => {
       const res = await simulateGoodsDetailApi(String(id.value))
       if (res?.name) currentTitle.value = res.name

@@ -21,7 +21,7 @@ export const useMenuList = (params: Ref<{
 }>) => {
   const { menuList } = useMenuSharedState()
   return useAsyncData(
-    `menu:${JSON.stringify(toValue(params))}`,
+    'menu-list',
     async () => {
       const res = (await simulateMenuApi(
         params.value,
@@ -33,7 +33,7 @@ export const useMenuList = (params: Ref<{
       server: true,
       default: () =>
         ({ list: [], total: 0 }) as ApiListResponse<GoodType<CakeDetailType>>,
-      watch: [() => ({ ...params.value })],
+      watch: [params],
     },
   )
 }
@@ -41,7 +41,7 @@ export const useMenuList = (params: Ref<{
 export const useMenuDetail = (id: Ref<number>) => {
   const { currentTitle } = useBreadcrumb()
   return useAsyncData(
-    `menu:${id.value}`,
+    'menu-detail',
     async () => {
       const res = await simulateMenuDetailApi(String(id.value))
       if (res?.name) currentTitle.value = res.name

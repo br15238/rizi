@@ -30,7 +30,7 @@ const menuList = computed(() => data.value?.list || [])
 const total = computed(() => data.value?.total || 0)
 
 const handleTabClick = (index: number) => {
-  queryParams.value.type = index
+  activeTab.value = index
   pageConfig.value.current = 1
 }
 

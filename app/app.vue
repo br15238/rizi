@@ -32,8 +32,8 @@ useHead({
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}img/favicon.svg` },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' }
+    // { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous' },
+    // { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' }
   ]
 })
 </script>
