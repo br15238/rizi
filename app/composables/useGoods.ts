@@ -1,4 +1,4 @@
-import { useAsyncData } from '#imports'
+import { useAsyncData, useState, toValue } from '#imports'
 
 import {
   simulateGoodsApi,
@@ -14,17 +14,20 @@ export const useGoodsSharedState = () => {
   return { goodsList }
 }
 
-export const useGoodsList = (params: Ref<{
-  page: number
-  pageSize: number
-  type?: number
-}>) => {
+export const useGoodsList = (
+  params: Ref<{
+    page: number
+    pageSize: number
+    type?: number
+  }>,
+  key = 'goods-list'
+) => {
   const { goodsList } = useGoodsSharedState()
   return useAsyncData(
-    'goods-list',
+    key,
     async () => {
       const res = (await simulateGoodsApi(
-        params.value,
+        toValue(params),
       )) as unknown as ApiListResponse<GoodType<CoffeeDetailType>>
       if (res.list) goodsList.value = res.list
       return res
@@ -37,12 +40,12 @@ export const useGoodsList = (params: Ref<{
   )
 }
 
-export const useGoodsDetail = (id: Ref<number>) => {
+export const useGoodsDetail = (id: Ref<number>, key = 'goods-detail') => {
   const { currentTitle } = useBreadcrumb()
   return useAsyncData(
-    'goods-detail',
+    key,
     async () => {
-      const res = await simulateGoodsDetailApi(String(id.value))
+      const res = await simulateGoodsDetailApi(String(toValue(id)))
       if (res?.name) currentTitle.value = res.name
       return res
     },

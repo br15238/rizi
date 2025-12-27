@@ -27,15 +27,33 @@ export default defineNuxtConfig({
   app: {
     baseURL: isProd ? '/rizi/' : '/',
     head: {
-      link: [
+      // link: [
+      //   {
+      //     rel: 'preconnect',
+      //     href: 'https://fonts.googleapis.com'
+      //   },
+      //   {
+      //     rel: 'preconnect',
+      //     href: 'https://fonts.gstatic.com',
+      //     crossorigin: ''
+      //   }
+      // ]
+      style: [
         {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com'
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: ''
+          innerHTML: `
+            html, body {
+              margin: 0;
+              font-family: "Noto Sans TC", sans-serif;
+            }
+
+            #__nuxt {
+              width: 100%;
+              min-height: 100vh;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          `
         }
       ]
     }

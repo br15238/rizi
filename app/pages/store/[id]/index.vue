@@ -15,7 +15,7 @@ import { STORE_DETAIL_TYPE } from '@/utils/constants'
 
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
-const { data } = await useGoodsDetail(detailId)
+const { data } = await useGoodsDetail(detailId, 'goods-detail-id')
 const { goodsList } = useGoodsSharedState()
 const good = computed<GoodType<CoffeeDetailType> | '商品不存在'>(() => data.value?.id ? data.value : '商品不存在')
 const favouriteStore = useFavouriteStore()
@@ -33,7 +33,7 @@ const recommendList = computed(() => {
 })
 
 if (typeof good.value === 'object' && goodsList.value.length === 0)
-  useGoodsList(recommendParams)
+  useGoodsList(recommendParams, 'goods-list-recommend')
 
 useSeoMeta({
   title: () =>

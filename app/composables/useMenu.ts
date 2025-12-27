@@ -1,4 +1,4 @@
-import { useAsyncData } from '#imports'
+import { useAsyncData, useState, toValue } from '#imports'
 
 import {
   simulateMenuApi,
@@ -14,17 +14,20 @@ export const useMenuSharedState = () => {
   return { menuList }
 }
 
-export const useMenuList = (params: Ref<{
-  type?: number,
-  page: number,
-  pageSize: number
-}>) => {
+export const useMenuList = (
+  params: Ref<{
+    type?: number
+    page: number
+    pageSize: number
+  }>,
+  key = 'menu-list'
+) => {
   const { menuList } = useMenuSharedState()
   return useAsyncData(
-    'menu-list',
+    key,
     async () => {
       const res = (await simulateMenuApi(
-        params.value,
+        toValue(params),
       )) as unknown as ApiListResponse<GoodType<CakeDetailType>>
       if (res.list) menuList.value = res.list
       return res
@@ -38,12 +41,12 @@ export const useMenuList = (params: Ref<{
   )
 }
 
-export const useMenuDetail = (id: Ref<number>) => {
+export const useMenuDetail = (id: Ref<number>, key = 'menu-detail') => {
   const { currentTitle } = useBreadcrumb()
   return useAsyncData(
-    'menu-detail',
+    key,
     async () => {
-      const res = await simulateMenuDetailApi(String(id.value))
+      const res = await simulateMenuDetailApi(String(toValue(id)))
       if (res?.name) currentTitle.value = res.name
       return res
     },

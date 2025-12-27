@@ -21,7 +21,7 @@ const queryParams = computed(() => ({
   page: pageConfig.value.current,
   pageSize: pageConfig.value.pageSize
 }))
-const { data } = useGoodsList(queryParams)
+const { data } = useGoodsList(queryParams, 'goods-list-main')
 const goodList = computed(() => data.value?.list || [])
 const total = computed(() => data.value?.total || 0)
 

@@ -12,7 +12,7 @@ import { GOOD_DETAIL_TYPE } from '@/utils/constants'
 
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
-const { data } = await useMenuDetail(detailId)
+const { data } = await useMenuDetail(detailId, 'menu-detail-id')
 const { menuList } = useMenuSharedState()
 const cake = computed<GoodType<CakeDetailType> | '商品不存在'>(() => data.value?.id ? data.value : '商品不存在')
 const recommendParams = computed(() => ({
@@ -28,7 +28,7 @@ const recommendList = computed(() => {
 })
 
 if (typeof cake.value === 'object' && menuList.value.length === 0)
-  useMenuList(recommendParams)
+  useMenuList(recommendParams, 'menu-list-recommend')
 
 useSeoMeta({ title: () => typeof cake.value === 'object' && cake.value?.id ? cake.value.name : '商品不存在' })
 definePageMeta({
