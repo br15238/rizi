@@ -27,17 +27,6 @@ export default defineNuxtConfig({
   app: {
     baseURL: isProd ? '/rizi/' : '/',
     head: {
-      // link: [
-      //   {
-      //     rel: 'preconnect',
-      //     href: 'https://fonts.googleapis.com'
-      //   },
-      //   {
-      //     rel: 'preconnect',
-      //     href: 'https://fonts.gstatic.com',
-      //     crossorigin: ''
-      //   }
-      // ]
       style: [
         {
           innerHTML: `
@@ -53,6 +42,9 @@ export default defineNuxtConfig({
               flex-direction: column;
               align-items: center;
             }
+              
+            .contentWrap { width: 100%; max-width:1080px; margin:0 auto; display:flex; flex-direction:column; padding:0 4%; }
+            img { display:inline; vertical-align:middle; }
           `
         }
       ]

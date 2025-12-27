@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
 
 const IndexMenu = defineAsyncComponent(() =>
@@ -13,7 +13,7 @@ const IndexConcept = defineAsyncComponent(() =>
 const IndexInfo = defineAsyncComponent(() =>
   import('@/components/index/info.vue')
 )
-</script> -->
+</script>
 
 <template>
   <IndexCarousel />
