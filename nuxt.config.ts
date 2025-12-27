@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import critical from 'vite-plugin-critical'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -9,7 +8,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/tailwindcss',
-    '@ant-design-vue/nuxt'
+    '@ant-design-vue/nuxt',
+    '@nuxtjs/critters',
   ],
   runtimeConfig: {
     public: {
@@ -29,17 +29,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: isProd ? '/rizi/' : '/',
   },
-  vite: {
-    plugins: [
-      isProd && critical({
-        criticalBase: '.output/public',
-        criticalPages: [{ url: '/rizi/', template: 'index.html' }],
-        inline: true,
-        extract: true,
-        minify: true,
-        width: 1300,
-        height: 900,
-      })
-    ].filter(Boolean)
+  critters: {
+    config: {
+      preload: 'swap'
+    }
   }
 })
