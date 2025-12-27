@@ -7,7 +7,7 @@ export const simulateNewsApi = (
     type?: number | string;
   } = {},
 ) => {
-  console.log('simulateNewsApi')
+  console.log('simulateNewsApi request:', query)
   
   const { pageSize, page, type } = query
   const _pageSize = Number(pageSize) || 10

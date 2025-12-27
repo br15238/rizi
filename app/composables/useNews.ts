@@ -7,7 +7,7 @@ export const useNews = (
     type: number;
   }>,
 ) => {
-  return useAsyncData('news', async () => simulateNewsApi(params.value), {
+  return useAsyncData(`news-${JSON.stringify(params.value)}`, async () => simulateNewsApi(params.value), {
     default: () => ({ list: [], total: 0 }),
     watch: [params],
   })
