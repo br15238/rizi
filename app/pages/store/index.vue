@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useSeoMeta, definePageMeta } from '#imports'
-import { computed, ref } from 'vue'
+import { useSeoMeta, definePageMeta, useRoute, useRouter } from '#imports'
+import { computed, onMounted, ref, watch } from 'vue'
 
 import { useGoodsList } from '@/composables/useGoods'
 import { STORE_TAB_TYPE } from '@/utils/constants'
@@ -11,11 +11,13 @@ useSeoMeta({
 })
 definePageMeta({ title: '線上購物' })
 
+const route = useRoute()
+const router = useRouter()
 const pageConfig = ref({
   current: 1,
   pageSize: 8,
 })
-const activeTab = ref(0)
+const activeTab = ref(Number(route.query.type) || 0)
 const queryParams = computed(() => ({
   type: activeTab.value,
   page: pageConfig.value.current,
@@ -29,17 +31,26 @@ const handleTabClick = (index: number) => {
   activeTab.value = index
   pageConfig.value.current = 1
 }
+
+watch(() => route.query.type, (newType) => {
+  if (newType !== undefined) {
+    activeTab.value = Number(newType) || 0
+    pageConfig.value.current = 1
+  }
+})
+
+onMounted(() => {
+  if (route.query && route.query.type) {
+    router.replace({ query: {} })
+  }
+})
 </script>
 
 <template>
   <section class="contentWrap">
     <Divider title="線上購物" />
     <div class="flex flex-col md:flex-row justify-between m-auto">
-      <Tab
-        v-model="activeTab"
-        :tab-data="STORE_TAB_TYPE"
-        @handle-tab-click="handleTabClick"
-      />
+      <Tab v-model="activeTab" :tab-data="STORE_TAB_TYPE" @handle-tab-click="handleTabClick" />
       <div
         class="shopWrap"
         data-aos="fade-left"

@@ -12,17 +12,14 @@ import { GOOD_DETAIL_TYPE } from '@/utils/constants'
 
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
-const { data } = await useMenuDetail(detailId) // 使用動態 Key
+const { data } = await useMenuDetail(detailId)
 const { menuList } = useMenuSharedState()
 const cake = computed<GoodType<CakeDetailType> | '商品不存在'>(() => data.value?.id ? data.value : '商品不存在')
 
-// 推薦列表邏輯：
-// 1. 如果 sharedState 有資料，直接過濾
-// 2. 如果 sharedState 沒資料，單獨獲取推薦列表（不更新到 sharedState 以免覆蓋完整列表）
 const recommendParams = computed(() => ({
   type: typeof cake.value === 'object' ? cake.value.type : 0,
   page: 1,
-  pageSize: 6 // 拿多一點點來過濾
+  pageSize: 6
 }))
 
 const { data: recData } = await useMenuList(recommendParams, 'menu-list-recommend')

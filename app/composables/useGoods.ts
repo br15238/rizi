@@ -23,27 +23,32 @@ export const useGoodsList = (
   key = 'goods-list'
 ) => {
   const { goodsList } = useGoodsSharedState()
+  const dynamicKey = computed(() => {
+    const p = toValue(params)
+    return `${key}-${p.type}-${p.page}-${p.pageSize}`
+  })
   return useAsyncData(
-    key,
+    dynamicKey,
     async () => {
       const res = (await simulateGoodsApi(
         toValue(params),
       )) as unknown as ApiListResponse<GoodType<CoffeeDetailType>>
-      if (res.list) goodsList.value = res.list
+      if (res.list && key === 'goods-list-main') goodsList.value = res.list
       return res
     },
     {
       server: true,
       default: () => ({ list: [], total: 0 }) as ApiListResponse<GoodType<CoffeeDetailType>>,
-      watch: [params]
-    }
+      watch: [params],
+    },
   )
 }
 
 export const useGoodsDetail = (id: Ref<number>, key = 'goods-detail') => {
   const { currentTitle } = useBreadcrumb()
+  const dynamicKey = computed(() => `${key}-${toValue(id)}`)
   return useAsyncData(
-    key,
+    dynamicKey,
     async () => {
       const res = await simulateGoodsDetailApi(String(toValue(id)))
       if (res?.name) currentTitle.value = res.name

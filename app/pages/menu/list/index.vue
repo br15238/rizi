@@ -20,13 +20,6 @@ const pageConfig = ref({
   pageSize: 8,
 })
 const activeTab = ref(Number(route.query.type) || 0)
-
-watch(() => route.query.type, (newType) => {
-  if (newType !== undefined) {
-    activeTab.value = Number(newType) || 0
-    pageConfig.value.current = 1
-  }
-})
 const queryParams = computed(() => ({
   type: activeTab.value,
   page: pageConfig.value.current,
@@ -41,8 +34,14 @@ const handleTabClick = (index: number) => {
   pageConfig.value.current = 1
 }
 
+watch(() => route.query.type, (newType) => {
+  if (newType !== undefined) {
+    activeTab.value = Number(newType) || 0
+    pageConfig.value.current = 1
+  }
+})
+
 onMounted(() => {
-  // 進入頁面後，如果原本有 query 則清除，確保 URL 乾淨，但確保 activeTab 已從 query 初始化
   if (route.query && route.query.type) {
     router.replace({ query: {} })
   }
