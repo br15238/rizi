@@ -31,7 +31,7 @@ onMounted(() => {
   <div class="relative aspect-[1280/533]">
     <IndexHeroStatic v-if="!showSlider" img="/img/banner/coffee-phone.webp" class="absolute inset-0" />
     <ClientOnly>
-      <IndexCarousel v-if="showSlider" class="absolute inset-0" />
+      <LazyIndexCarousel v-if="showSlider" class="absolute inset-0" />
     </ClientOnly>
   </div>
   <div class="contentWrap mb-0">
