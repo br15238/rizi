@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
+import { useSeoMeta, definePageMeta } from '#imports'
 import { computed, ref } from 'vue'
 
 import type { Key } from 'ant-design-vue/es/_util/type'
@@ -15,7 +15,6 @@ useSeoMeta({
 })
 definePageMeta({ title: '最新消息' })
 
-const { app: { baseURL } } = useRuntimeConfig()
 const pageConfig = ref({
   current: 1,
   pageSize: 4,
@@ -78,11 +77,13 @@ const handleOpenModal = (data: NewsType) => {
         @keyup.enter="handleOpenModal(news)"
       >
         <div class="w-full aspect-[475/300] overflow-hidden">
-          <img
-            :src="`${baseURL}${news.img}`"
+          <ResponsiveImg
+            img-class="w-full transition-transform duration-[.3s] hover:scale-[1.2] aspect-[475/300] w-[475px]"
+            :src="news.img"
             :alt="news.title"
-            class="w-full transition-transform duration-[.3s] hover:scale-[1.2] aspect-[475/300] w-[475px]"
-          >
+            :fetchpriority="'high'"
+            :loading="'eager'"
+          />
         </div>
         <div class="p-[0_4%]">
           <h3

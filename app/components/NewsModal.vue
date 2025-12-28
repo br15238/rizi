@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useRuntimeConfig } from '#imports'
 import { computed } from 'vue'
 
 import type { NewsModelType, NewsType } from '@/types'
@@ -7,7 +6,6 @@ import type { NewsModelType, NewsType } from '@/types'
 const props = defineModel<NewsModelType>({
   required: true
 })
-const { app: { baseURL } } = useRuntimeConfig()
 const listIdMap = computed(() => props.value.list.map(x => x.id))
 const pageId = computed(() => props.value.data.id)
 const noPrev = computed(() => listIdMap.value[0] === pageId.value)
@@ -26,7 +24,7 @@ const handleChangeNews = (type: 'next' | 'prev') => {
 
 <template>
   <a-modal v-model:open="props.isOpen" :title="props.data.title" @cancel="closeModal">
-    <img :src="`${baseURL}${props.data.img}`" class="w-full aspect-[475/300] w-[475px]" :alt="props.data.title">
+    <ResponsiveImg img-class="w-full aspect-[475/300] w-[475px]" :src="props.data.img" :alt="props.data.title" />
     <p class="mt-[6px]">
       {{ props.data.introduction }}
     </p>

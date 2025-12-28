@@ -23,13 +23,17 @@ export const useMenuList = (
   key = 'menu-list'
 ) => {
   const { menuList } = useMenuSharedState()
+  const dynamicKey = computed(() => {
+    const p = toValue(params)
+    return `${key}-${p.type}-${p.page}-${p.pageSize}`
+  })
   return useAsyncData(
-    key,
+    dynamicKey,
     async () => {
       const res = (await simulateMenuApi(
         toValue(params),
       )) as unknown as ApiListResponse<GoodType<CakeDetailType>>
-      if (res.list) menuList.value = res.list
+      if (res.list && key === 'menu-list-main') menuList.value = res.list
       return res
     },
     {
@@ -43,8 +47,9 @@ export const useMenuList = (
 
 export const useMenuDetail = (id: Ref<number>, key = 'menu-detail') => {
   const { currentTitle } = useBreadcrumb()
+  const dynamicKey = computed(() => `${key}-${toValue(id)}`)
   return useAsyncData(
-    key,
+    dynamicKey,
     async () => {
       const res = await simulateMenuDetailApi(String(toValue(id)))
       if (res?.name) currentTitle.value = res.name
