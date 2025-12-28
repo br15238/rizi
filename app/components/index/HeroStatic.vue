@@ -1,15 +1,14 @@
 <script setup lang="ts">
-defineProps<{
-    img: string
-    alt?: string
-}>()
+import { useRuntimeConfig } from '#imports'
+
+const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
   <section class="mt-[2%] aspect-[1280/533]">
     <img
-      :src="img"
-      :alt="alt || 'Banner'"
+      :img="`${baseURL}img/banner/coffee-phone.webp`"
+      alt="coffee"
       fetchpriority="high"
       loading="eager"
       width="1280"
