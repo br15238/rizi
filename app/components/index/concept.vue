@@ -22,7 +22,7 @@ const { app: { baseURL } } = useRuntimeConfig()
           muted
           playsinline
           aria-label="環境氛圍動畫"
-          class="w-full w-[421px] aspect-[748/387] object-cover rounded-lg"
+          class="w-full w-[421px] aspect-[748/387] object-cover conceptFull:rounded-r-lg"
         >
           <source :src="`${baseURL}img/brand/index.mp4`" type="video/mp4">
           您的瀏覽器不支援影片播放。

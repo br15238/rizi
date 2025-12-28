@@ -15,7 +15,7 @@ const breadcrumbData = computed(() => route.meta.breadcrumb as BreadcrumbType[] 
 <template>
   <section class="w-full bg-[var(--mainGray)] flex justify-center">
     <div class="w-full max-w-[1080px]">
-      <ul class="m-auto flex p-[5px_4%_8px] leading-[12px]">
+      <ul class="m-auto flex p-[5px_4%_8px] leading-[12px] flex-wrap">
         <li class="text-[12px]">
           <NuxtLink to="/" class="not-hover:!text-[var(--deepGray)] text-[12px]">
             首頁
