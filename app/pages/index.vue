@@ -1,18 +1,4 @@
 <script setup lang="ts">
-const IndexMenu = defineAsyncComponent(() =>
-  import('@/components/index/Menu.vue')
-)
-const IndexStore = defineAsyncComponent(() =>
-  import('@/components/index/Store.vue')
-)
-const IndexConcept = defineAsyncComponent(() =>
-  import('@/components/index/Concept.vue')
-)
-const IndexInfo = defineAsyncComponent(() =>
-  import('@/components/index/Info.vue')
-)
-
-import { defineAsyncComponent } from 'vue'
 import { ref, onMounted } from 'vue'
 const showSlider = ref(false)
 
@@ -36,11 +22,11 @@ onMounted(() => {
   </div>
   <div class="contentWrap mb-0">
     <IndexNews />
-    <IndexMenu />
-    <IndexStore />
+    <LazyIndexMenu />
+    <LazyIndexStore />
   </div>
-  <IndexConcept />
+  <LazyIndexConcept />
   <div class="contentWrap">
-    <IndexInfo />
+    <LazyIndexInfo />
   </div>
 </template>
