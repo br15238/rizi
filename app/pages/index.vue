@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useRuntimeConfig } from '#imports'
 import { ref, onMounted } from 'vue'
+
+const { app: { baseURL } } = useRuntimeConfig()
 const showSlider = ref(false)
 
 onMounted(() => {
@@ -15,7 +18,7 @@ onMounted(() => {
 
 <template>
   <div class="relative aspect-[1280/533]">
-    <IndexHeroStatic v-if="!showSlider" img="/img/banner/coffee-phone.webp" class="absolute inset-0" />
+    <IndexHeroStatic v-if="!showSlider" :img="`${baseURL}img/banner/coffee-phone.webp`" class="absolute inset-0" />
     <ClientOnly>
       <LazyIndexCarousel v-if="showSlider" class="absolute inset-0" />
     </ClientOnly>
