@@ -1,3 +1,5 @@
+import emailjs from '@emailjs/browser'
+import { message } from 'ant-design-vue'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 import { getSrc, getSrcSet, sendEmail } from './tool'
@@ -30,9 +32,6 @@ vi.mock('ant-design-vue', () => ({
   }
 }))
 
-import emailjs from '@emailjs/browser'
-import { message } from 'ant-design-vue'
-
 describe('tool.ts utilities', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -64,7 +63,7 @@ describe('tool.ts utilities', () => {
 
   describe('sendEmail', () => {
     it('should call emailjs.send and handle success with callback', async () => {
-      vi.mocked(emailjs.send).mockResolvedValueOnce({})
+      vi.mocked(emailjs.send).mockResolvedValueOnce({ status: 200, text: 'OK' })
       const callback = vi.fn()
       await sendEmail('test', {}, callback)
       expect(emailjs.send).toHaveBeenCalled()
@@ -73,20 +72,20 @@ describe('tool.ts utilities', () => {
     })
 
     it('should call emailjs.send and handle success without callback', async () => {
-      vi.mocked(emailjs.send).mockResolvedValueOnce({})
+      vi.mocked(emailjs.send).mockResolvedValueOnce({ status: 200, text: 'OK' })
       await sendEmail('test', {})
       expect(emailjs.send).toHaveBeenCalled()
       expect(message.success).toHaveBeenCalled()
     })
 
     it('should handle failure', async () => {
-      vi.mocked(emailjs.send).mockRejectedValueOnce({ text: 'error' })
+      vi.mocked(emailjs.send).mockRejectedValueOnce({ status: 500, text: 'error' })
       await sendEmail('test', {}, () => {})
       expect(message.error).toHaveBeenCalled()
     })
 
     it('should show loading without messageDOM', async () => {
-      vi.mocked(emailjs.send).mockResolvedValueOnce({})
+      vi.mocked(emailjs.send).mockResolvedValueOnce({ status: 200, text: 'OK' })
       const spy = vi.spyOn(document, 'querySelector').mockReturnValue(null)
       await sendEmail('test', {}, () => {})
       expect(message.loading).toHaveBeenCalledTimes(2) // once without key, once with key
@@ -94,7 +93,7 @@ describe('tool.ts utilities', () => {
     })
 
     it('should show loading with messageDOM', async () => {
-      vi.mocked(emailjs.send).mockResolvedValueOnce({})
+      vi.mocked(emailjs.send).mockResolvedValueOnce({ status: 200, text: 'OK' })
       const mockElement = { length: 1 }
       const spy = vi.spyOn(document, 'querySelector').mockReturnValue(mockElement as any)
       await sendEmail('test', {}, () => {})
