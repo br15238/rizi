@@ -29,12 +29,9 @@ onMounted(() => {
 
 <template>
   <div class="relative aspect-[1280/533]">
-    <!-- LCP 首圖 -->
-    <HeroStatic v-if="!showSlider" img="/img/banner/coffee-phone.webp" class="absolute inset-0" />
-
-    <!-- 互動 slider（延後） -->
+    <IndexHeroStatic v-if="!showSlider" img="/img/banner/coffee-phone.webp" class="absolute inset-0" />
     <ClientOnly>
-      <LazyHomeSlider v-if="showSlider" class="absolute inset-0" />
+      <IndexCarousel v-if="showSlider" class="absolute inset-0" />
     </ClientOnly>
   </div>
   <div class="contentWrap mb-0">
