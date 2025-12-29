@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
 const showSlider = ref(false)
@@ -12,15 +12,15 @@ onMounted(() => {
     showSlider.value = true
   })
 })
-</script>
+</script> -->
 
 <template>
-  <div class="relative aspect-[1280/533]">
+  <!-- <div class="relative aspect-[1280/533]">
     <IndexHeroStatic v-if="!showSlider" class="absolute inset-0" />
     <ClientOnly>
       <LazyIndexCarousel v-if="showSlider" class="absolute inset-0" />
     </ClientOnly>
-  </div>
+  </div> -->
   <div class="contentWrap mb-0">
     <IndexNews />
     <LazyIndexMenu />
