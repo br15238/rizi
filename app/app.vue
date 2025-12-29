@@ -32,7 +32,6 @@ useHead({
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}img/favicon.svg` },
-    { rel: 'preload', as: 'image', href: `${baseURL}img/banner/coffee-phone.webp`, fetchpriority: 'high' }
   ]
 })
 </script>
