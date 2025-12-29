@@ -6,7 +6,7 @@ const showSlider = ref(false)
 onMounted(() => {
   const idle =
     window.requestIdleCallback ??
-    ((cb: () => void) => setTimeout(cb, 200))
+    ((cb: () => void) => setTimeout(cb, 2000))
 
   idle(() => {
     showSlider.value = true
