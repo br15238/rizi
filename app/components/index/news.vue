@@ -5,7 +5,7 @@ import { useNews } from '@/composables/useNews'
 import type { NewsModelType, NewsType } from '@/types'
 
 const query = ref({ page: 1, pageSize: 3, type: 0 })
-const { data } = await useNews(query)
+const { data } = await useNews(query, 'news-index')
 const newsData = computed(() => data.value.list)
 const modalConfig = ref<NewsModelType>({
   isOpen: false,

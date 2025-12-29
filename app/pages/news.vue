@@ -25,7 +25,7 @@ const queryParams = computed(() => ({
   pageSize: pageConfig.value.pageSize,
   type: activeTab.value
 }))
-const { data } = useNews(queryParams)
+const { data } = useNews(queryParams, 'news-page')
 const newsList = computed(() => data.value.list)
 const total = computed(() => data.value.total)
 const modalConfig = ref<NewsModelType>({

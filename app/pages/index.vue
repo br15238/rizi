@@ -3,11 +3,13 @@ import { useHead, useRuntimeConfig } from '#imports'
 
 const { app: { baseURL } } = useRuntimeConfig()
 
-useHead({
-  link: [
-    { rel: 'preload', as: 'image', href: `${baseURL}img/banner/coffee-phone.webp`, fetchpriority: 'high' }
-  ]
-})
+if (import.meta.server) {
+  useHead({
+    link: [
+      { rel: 'preload', as: 'image', href: `${baseURL}img/banner/coffee-phone.webp`, fetchpriority: 'high' }
+    ]
+  })
+}
 </script>
 
 <template>

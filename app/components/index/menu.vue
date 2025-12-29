@@ -4,7 +4,7 @@ import { computed, ref } from 'vue'
 import { useMenuList } from '@/composables/useMenu'
 
 const query = ref({ page: 1, pageSize: 7 })
-const { data } = await useMenuList(query)
+const { data } = await useMenuList(query, 'menu-index')
 const list = computed(() => data.value.list)
 </script>
 
