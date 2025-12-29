@@ -15,6 +15,7 @@ onMounted(() => {
 </script> -->
 
 <template>
+  <IndexCarousel />
   <!-- <div class="relative aspect-[1280/533]">
     <IndexHeroStatic v-if="!showSlider" class="absolute inset-0" />
     <ClientOnly>
