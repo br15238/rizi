@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser'
 import { message } from 'ant-design-vue'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-import { getSrc, getSrcSet, sendEmail } from './tool'
+import { getSrc, getSrcSet, sendEmail } from '@/utils/tool'
 
 vi.mock('#imports', () => ({
   useRuntimeConfig: () => ({

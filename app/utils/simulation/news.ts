@@ -1,11 +1,9 @@
-import db from '@/assets/db.json'
+import type { ApiParamsType } from '@/types'
+
+import db from '../../assets/db.json'
 
 export const simulateNewsApi = (
-  query: {
-    page?: number | string;
-    pageSize?: number | string;
-    type?: number | string;
-  } = {},
+  query: ApiParamsType = {},
 ) => {
   const { pageSize, page, type } = query
   const _pageSize = Number(pageSize) || 10

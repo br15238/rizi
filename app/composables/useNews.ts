@@ -1,4 +1,4 @@
-import { simulateNewsApi } from '@@/utils/simulation/news'
+import { simulateNewsApi } from '@/utils/simulation/news'
 
 export const useNews = (
   params: Ref<{

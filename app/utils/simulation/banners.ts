@@ -1,4 +1,4 @@
-import db from '@/assets/db.json'
+import db from '../../assets/db.json'
 
 export const simulateBannersApi = () => {
   return db.banners

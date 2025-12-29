@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@ant-design-vue/nuxt',
     '@nuxtjs/critters',
+    '@nuxt/test-utils/module',
   ],
   runtimeConfig: {
     public: {

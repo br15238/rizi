@@ -1,3 +1,9 @@
+export type ApiParamsType = {
+  page?: number
+  pageSize?: number
+  type?: number
+}
+
 export type ApiListResponse<T> = {
   list: T[]
   total: number

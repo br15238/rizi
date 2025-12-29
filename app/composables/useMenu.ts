@@ -1,12 +1,12 @@
 import { useAsyncData, useState, toValue } from '#imports'
 
+import { useBreadcrumb } from '@/composables/useBreadcrumb'
+import type { GoodType, CakeDetailType, ApiListResponse } from '@/types'
+
 import {
   simulateMenuApi,
   simulateMenuDetailApi,
-} from '@@/utils/simulation/menu'
-
-import { useBreadcrumb } from '@/composables/useBreadcrumb'
-import type { GoodType, CakeDetailType, ApiListResponse } from '@/types'
+} from '@/utils/simulation/menu'
 
 export const useMenuSharedState = () => {
   const menuList = useState<GoodType<CakeDetailType>[]>('shared-menu-list', () => [])

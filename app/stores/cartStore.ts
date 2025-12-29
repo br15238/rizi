@@ -20,7 +20,7 @@ export const useCartStore = defineStore('cart', {
   actions: {
     add (item: GoodType<CoffeeDetailType>) {
       const target = this.items.find(i => i.id === item.id)
-
+      const messageDOM = document.querySelector('.ant-message-notice') as NodeListOf<HTMLElement> | null
       if (target) {
         target.count += 1
       } else {
@@ -30,6 +30,7 @@ export const useCartStore = defineStore('cart', {
           checked: true,
         })
       }
+      if (!messageDOM || messageDOM?.length === 0) message.success('加入成功')
       message.success('加入成功')
     },
 

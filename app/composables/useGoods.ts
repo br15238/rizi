@@ -1,13 +1,12 @@
 import { useAsyncData, useState, toValue } from '#imports'
 
+import { useBreadcrumb } from '@/composables/useBreadcrumb'
+import type { GoodType, CoffeeDetailType, ApiListResponse } from '@/types'
+
 import {
   simulateGoodsApi,
   simulateGoodsDetailApi,
-} from '@@/utils/simulation/goods'
-
-import { useBreadcrumb } from '@/composables/useBreadcrumb'
-
-import type { GoodType, CoffeeDetailType, ApiListResponse } from '@/types'
+} from '@/utils/simulation/goods'
 
 export const useGoodsSharedState = () => {
   const goodsList = useState<GoodType<CoffeeDetailType>[]>('shared-goods-list', () => [])

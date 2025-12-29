@@ -1,8 +1,8 @@
 import { useAsyncData } from '#imports'
 
-import { simulateBannersApi } from '@@/utils/simulation/banners'
-
 import type { BannerType } from '@/types'
+
+import { simulateBannersApi } from '@/utils/simulation/banners'
 
 export const useBanner = () => {
   return useAsyncData<BannerType[]>(

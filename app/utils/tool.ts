@@ -22,7 +22,13 @@ export const getSrc = (
   size: 'phone' | 'pc' = 'pc',
   domain = true
 ) => {
-  const { app: { baseURL } } = useRuntimeConfig()
+  let baseURL = '/'
+  try {
+    const config = useRuntimeConfig()
+    baseURL = config.app.baseURL
+  } catch {
+    baseURL = '/'
+  }
   return domain ? `${baseURL}${url}-${size}.webp` : `${url}-${size}.webp`
 }
 

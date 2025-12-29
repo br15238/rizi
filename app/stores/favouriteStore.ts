@@ -15,13 +15,14 @@ export const useFavouriteStore = defineStore('favourite', {
   actions: {
     add (item: GoodType<CoffeeDetailType>) {
       const exists = this.items.some(i => i.id === item.id)
+      const messageDOM = document.querySelector('.ant-message-notice') as NodeListOf<HTMLElement> | null
       if (exists) return
 
       this.items.push(item)
 
-      if (process.client) {
-        message.success('加入成功')
-      }
+      if (!messageDOM || messageDOM?.length === 0) message.success('加入成功')
+      message.success('加入成功')
+
     },
 
     remove (id: number) {

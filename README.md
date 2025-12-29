@@ -1,75 +1,36 @@
-# Nuxt Minimal Starter
+<img src="https://raw.githubusercontent.com/suanriz/rizi/refs/heads/master/public/img/logoFooter.webp" height="96px" alt="logo">
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# [好日子咖啡輕食 (RIZI COFE HOUSE)](https://suanriz.github.io/rizi/)
 
-## Setup
+[![Build](https://github.com/suanriz/rizi/actions/workflows/ci.yaml/badge.svg)](https://github.com/suanriz/rizi/actions/workflows/ci.yaml)
+[![Codecov](https://codecov.io/gh/suanriz/rizi/branch/master/graph/badge.svg)](https://codecov.io/gh/suanriz/rizi)
+[![Node.js](https://img.shields.io/badge/Node.js-v20.19.6-0FC93F?logo=node.js&logoColor=FFFFFF&labelColor=505050)](https://nodejs.org/en/blog/release/v20.19.6)
+[![Pnpm](https://img.shields.io/badge/Pnpm-10.26.0-0FC93F?logo=pnpm&logoColor=FFFFFF&labelColor=505050)](https://pnpm.io/)
+<br/>
+<br/>
+<br/>
 
-Make sure to install dependencies:
+## 特色功能 (Features)
+- **響應式設計 (Responsive Design)**：
+  - 支援 Desktop、Tablet 與 Mobile 裝置瀏覽。
+- **購物車系統 (Shopping Cart)**：
+  - 支援商品加入購物車與收藏清單。
+  - 自動計算總價、折扣與優惠金額。
+  - 支援結帳寄發 Email 確認功能。
+- **資訊展示**：
+  - 展示品牌核心價值與最新活動。
+- **高品質程式碼**：
+  - 嚴格的 ESLint 規範。
+  - 單元測試。
+<br/>
 
-```bash
-# npm
-npm install
+## 技術棧 (Tech Stack)
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+| 類別         | 技術                           |
+| ------------ | ----------------------------- |
+| **核心框架** | Nuxt 4 (Vue 3 Composition API), TypeScript        |
+| **狀態管理** | Pinia, pinia-plugin-persistedstate |
+| **樣式設計** | TailwindCSS 4, Ant Design Vue  |
+| **測試框架** | Vitest, Nuxt Test Utils         |
+| **代碼管理** | Esint 9                        |
+<br/>
