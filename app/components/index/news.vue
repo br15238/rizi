@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue'
 
 import { useNews } from '@/composables/useNews'
-
 import type { NewsModelType, NewsType } from '@/types'
 
 const query = ref({ page: 1, pageSize: 3, type: 0 })
@@ -41,14 +40,10 @@ const handleOpenModal = (article: NewsType) => {
         @keyup.enter="handleOpenModal(news)"
       >
         <div class="item">
-          <h3
-            class="text-[18px] font-[400] tracking-[0.1em] leading-[1.2em] text-[var(--mainTxt)] mb-[2%] hover:text-[var(--mainRed)]"
-          >
+          <h3 class="text-[18px] font-[400] tracking-[0.1em] leading-[1.2em] text-[var(--mainTxt)] mb-[2%] hover:text-[var(--mainRed)]">
             {{ news.title }}
           </h3>
-          <p
-            class="text-[14px] font-[300] leading-[1.2em] tracking-[.1em] text-[var(--mainTxt)] hover:text-[var(--mainRed)]"
-          >
+          <p class="text-[14px] font-[300] leading-[1.2em] tracking-[.1em] text-[var(--mainTxt)] hover:text-[var(--mainRed)]">
             {{ news.introduction }}
           </p>
         </div>

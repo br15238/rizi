@@ -21,6 +21,7 @@ const initData = {
   content: '',
 }
 const formData = ref<EmailType>({ ...initData })
+
 const resetFormData = () => formData.value = { ...initData }
 
 const handleSendEmail = () => {
@@ -117,9 +118,7 @@ const handleSendEmail = () => {
         </div>
       </form>
     </div>
-    <p
-      class="text-[var(--mainTxt)] text-[16px] font-[300] tracking-[.08em] mt-[30px] flex items-center"
-    >
+    <p class="text-[var(--mainTxt)] text-[16px] font-[300] tracking-[.08em] mt-[30px] flex items-center">
       <img
         src="/img/icon/mail.webp"
         alt="信箱"

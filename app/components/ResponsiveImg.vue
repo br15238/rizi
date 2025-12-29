@@ -14,7 +14,6 @@ const props = defineProps({
     default: undefined,
   },
   imgStyle: Object as PropType<CSSProperties>,
-  media: { type: Number, default: 413 },
   loading: { type: String as PropType<undefined | 'lazy' | 'eager'>, default: undefined },
   fetchpriority: { type: String as PropType<'high' | 'low' | 'auto'>, default: 'lazy' },
 })
@@ -25,7 +24,7 @@ const { app: { baseURL } } = useRuntimeConfig()
 <template>
   <picture>
     <source media="(max-width: 412px)" :srcset="`${baseURL}${props.src}-phone.webp`" type="image/webp">
-    <source :media="`(min-width: ${props.media}px)`" :srcset="`${baseURL}${props.src}-pc.webp`" type="image/webp">
+    <source :media="`(min-width: 412.00001px)`" :srcset="`${baseURL}${props.src}-pc.webp`" type="image/webp">
     <source :srcset="`${baseURL}${props.src}.webp`" type="image/webp">
     <img
       :src="`${baseURL}${props.src}.jpg`"

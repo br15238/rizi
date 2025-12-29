@@ -28,7 +28,6 @@ const queryParams = computed(() => ({
 const { data } = useNews(queryParams)
 const newsList = computed(() => data.value.list)
 const total = computed(() => data.value.total)
-
 const modalConfig = ref<NewsModelType>({
   isOpen: false,
   list: [],
@@ -86,14 +85,10 @@ const handleOpenModal = (data: NewsType) => {
           />
         </div>
         <div class="p-[0_4%]">
-          <h3
-            class="text-[18px] text-[var(--mainTxt)] leading-[30px] font-[400] tracking-[.1em] m-[8px_0] hover:text-[var(--mainRed)]"
-          >
+          <h3 class="text-[18px] text-[var(--mainTxt)] leading-[30px] font-[400] tracking-[.1em] m-[8px_0] hover:text-[var(--mainRed)]">
             {{ news.title }}
           </h3>
-          <p
-            class="text-[16px] text-[var(--mainTxt)] leading-[25px] tracking-[.04em] font-[100] text-ellipsis line-clamp-2 break-all hover:text-[var(--mainRed)]"
-          >
+          <p class="text-[16px] text-[var(--mainTxt)] leading-[25px] tracking-[.04em] font-[100] text-ellipsis line-clamp-2 break-all hover:text-[var(--mainRed)]">
             {{ news.introduction }}
           </p>
         </div>

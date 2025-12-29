@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
+import { useSeoMeta, definePageMeta } from '#imports'
 import { computed, reactive, ref, watch, onMounted } from 'vue'
 import type { UnwrapRef } from 'vue'
 
@@ -18,7 +18,6 @@ useSeoMeta({
 definePageMeta({ title: '購物車' })
 
 const activeTab = ref(1)
-const { app: { baseURL } } = useRuntimeConfig()
 const isCheckoutModalShow = ref(false)
 const formRef = ref<HTMLFormElement | null>(null)
 const formData: UnwrapRef<GoodsListMailType> = reactive({

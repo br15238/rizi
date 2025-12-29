@@ -16,14 +16,12 @@ vi.mock('#imports', () => ({
   })
 }))
 
-// Mock emailjs
 vi.mock('@emailjs/browser', () => ({
   default: {
     send: vi.fn()
   }
 }))
 
-// Mock ant-design-vue message
 vi.mock('ant-design-vue', () => ({
   message: {
     loading: vi.fn(),

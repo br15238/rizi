@@ -4,7 +4,6 @@ import { computed, onMounted, ref, watch } from 'vue'
 
 import Tab from '@/components/Tab.vue'
 import { useMenuList } from '@/composables/useMenu'
-
 import { MENU_TAB_TYPE } from '@/utils/constants'
 
 useSeoMeta({ title: '菜單列表', description: '查看各類咖啡豆、甜點與輕食的詳細介紹。' })

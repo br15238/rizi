@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
+import { useSeoMeta, definePageMeta } from '#imports'
 
 import { MENU_TYPE_INFO } from '@/utils/constants'
 
@@ -9,7 +9,6 @@ useSeoMeta({
     '好日子咖啡輕食完整菜單瀏覽，包括手沖咖啡、特調飲品、精緻甜點與健康輕食等多樣選擇。',
 })
 definePageMeta({ title: '門市菜單' })
-const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
@@ -24,11 +23,13 @@ const { app: { baseURL } } = useRuntimeConfig()
       data-aos-easing="ease-in-sine"
     >
       <div class="w-full md:w-[50%]">
-        <img
-          :src="`${baseURL}${item.img}`"
-          class="object-cover w-full h-full aspect-[500/250] w-[500px]"
+        <ResponsiveImg
+          img-class="object-cover w-full h-full aspect-[500/250] w-[500px]"
+          :src="item.img"
           :alt="item.name"
-        >
+          fetchpriority="high"
+          loading="eager"
+        />
       </div>
       <div class="w-full md:w-[48%]">
         <h3 class="text-[18px] text-[var(--mainRed)] leading-[30px] tracking-[.04em] font-[300]">

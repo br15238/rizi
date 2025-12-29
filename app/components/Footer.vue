@@ -10,7 +10,6 @@ import {
 } from '@/utils/constants'
 
 const { app: { baseURL } } = useRuntimeConfig()
-
 const HEAD_OFFICE_TYPE = [...SHOP_INFO_TYPE.filter(x => x.type !== 'opening')].sort((a, b) => {
   if (a.type === 'address') return -1
   if (b.type === 'address') return 1
@@ -30,9 +29,7 @@ const HEAD_OFFICE_INFO = SHOP_INFO.find(x => x.id === 1) as InfoDataType
             alt=" logo"
           >
         </div>
-        <div
-          class="my-[3.4%] footerSm:mx-0 flex flex-col footerSm:flex-row justify-between items-center footerSm:items-end md:w-[60%] md:ml-[6%]"
-        >
+        <div class="my-[3.4%] footerSm:mx-0 flex flex-col footerSm:flex-row justify-between items-center footerSm:items-end md:w-[60%] md:ml-[6%]">
           <div>
             <div class="flex flex-col m-auto items-center footerSm:items-start">
               <p class="tracking-[.08em]">

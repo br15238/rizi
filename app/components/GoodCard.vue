@@ -11,9 +11,7 @@ const isCoffee = computed(() => !Object.prototype.hasOwnProperty.call(props.data
 </script>
 
 <template>
-  <div
-    class="group w-full rounded-t-[10px] shadow-[0_0_2px_var(--deepGray),0_0_10px_var(--tagBG)] hover:shadow-[0_0_2px_var(--shadow),0_0_10px_var(--shadow)] hover:bg-[var(--tableTH)]"
-  >
+  <div class="group w-full rounded-t-[10px] shadow-[0_0_2px_var(--deepGray),0_0_10px_var(--tagBG)] hover:shadow-[0_0_2px_var(--shadow),0_0_10px_var(--shadow)] hover:bg-[var(--tableTH)]">
     <NuxtLink :to="link" class="flex flex-col no-underline text-[var(--mainBlack)] h-full">
       <div
         tag="☰ New"

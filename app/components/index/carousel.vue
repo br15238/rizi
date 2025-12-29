@@ -5,19 +5,17 @@ import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue'
 
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-
 import 'swiper/css'
 import 'swiper/css/navigation'
+
 import { useBanner } from '@/composables/useBanner'
 
 const { app: { baseURL } } = useRuntimeConfig()
 const { data: banners } = await useBanner()
-
 const bannerList = computed(() => banners.value ?? [])
+const modules = [Navigation]
 
 const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
-
-const modules = [Navigation]
 </script>
 
 <template>
@@ -49,16 +47,10 @@ const modules = [Navigation]
           />
         </div>
       </SwiperSlide>
-
-      <!-- 自訂左右箭頭（完全保留你原本的樣式與位置） -->
-      <div
-        class="swiper-button-prev !left-[10px] w-[30px] !h-[30px] !text-[30px] !text-[var(--mainWhite)] opacity-50 hover:opacity-100 transition duration-[.3s] ease-in-out z-[var(--zIndexDefault)] after:hidden"
-      >
+      <div class="swiper-button-prev !left-[10px] w-[30px] !h-[30px] !text-[30px] !text-[var(--mainWhite)] opacity-50 hover:opacity-100 transition duration-[.3s] ease-in-out z-[var(--zIndexDefault)] after:hidden">
         <LeftCircleOutlined />
       </div>
-      <div
-        class="swiper-button-next !right-[10px] w-[30px] !h-[30px] !text-[30px] !text-[var(--mainWhite)] opacity-50 hover:opacity-100 transition duration-[.3s] ease-in-out z-[var(--zIndexDefault)] after:hidden"
-      >
+      <div class="swiper-button-next !right-[10px] w-[30px] !h-[30px] !text-[30px] !text-[var(--mainWhite)] opacity-50 hover:opacity-100 transition duration-[.3s] ease-in-out z-[var(--zIndexDefault)] after:hidden">
         <RightCircleOutlined />
       </div>
     </Swiper>

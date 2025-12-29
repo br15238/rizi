@@ -3,6 +3,5 @@ export const useBreadcrumb = () => {
     'breadcrumb-current-title',
     () => null
   )
-
   return { currentTitle }
 }

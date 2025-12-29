@@ -3,17 +3,15 @@ import { useRoute } from '#imports'
 import { onMounted, ref, computed } from 'vue'
 
 const route = useRoute()
-
 const colorPrimary = ref('#702222')
 const colorTextBase = ref('#505050')
 
 onMounted(() => {
   requestIdleCallback?.(() => {
     const rootStyle = getComputedStyle(document.documentElement)
-  
     const mainRed = rootStyle.getPropertyValue('--mainRed').trim()
     const mainTxt = rootStyle.getPropertyValue('--mainTxt').trim()
-  
+
     if (mainRed) colorPrimary.value = mainRed
     if (mainTxt) colorTextBase.value = mainTxt
   })

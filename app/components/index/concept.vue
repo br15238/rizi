@@ -2,7 +2,6 @@
 import { useRuntimeConfig } from '#imports'
 
 const { app: { baseURL } } = useRuntimeConfig()
-
 </script>
 
 <template>

@@ -10,18 +10,24 @@ import {
 import type { GoodType, CakeDetailType } from '@/types'
 import { GOOD_DETAIL_TYPE } from '@/utils/constants'
 
+useSeoMeta({ title: () => typeof cake.value === 'object' && cake.value?.id ? cake.value.name : '商品不存在' })
+definePageMeta({
+  breadcrumb: [
+    { title: '門市菜單', to: '/menu' },
+    { title: '菜單列表', to: '/menu/list' },
+  ]
+})
+
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
 const { data } = await useMenuDetail(detailId)
 const { menuList } = useMenuSharedState()
 const cake = computed<GoodType<CakeDetailType> | '商品不存在'>(() => data.value?.id ? data.value : '商品不存在')
-
 const recommendParams = computed(() => ({
   type: typeof cake.value === 'object' ? cake.value.type : 0,
   page: 1,
   pageSize: 6
 }))
-
 const { data: recData } = await useMenuList(recommendParams, 'menu-list-recommend')
 const recommendList = computed(() => {
   const currentId = detailId.value
@@ -29,14 +35,6 @@ const recommendList = computed(() => {
   return list
     .filter(x => x.id !== currentId)
     .slice(0, 4)
-})
-
-useSeoMeta({ title: () => typeof cake.value === 'object' && cake.value?.id ? cake.value.name : '商品不存在' })
-definePageMeta({
-  breadcrumb: [
-    { title: '門市菜單', to: '/menu' },
-    { title: '菜單列表', to: '/menu/list' },
-  ]
 })
 </script>
 
@@ -57,7 +55,8 @@ definePageMeta({
           <p
             class="text-[20px] leading-[20px] text-[var(--mainRed)] tracking-[.04em] font-[300] inline-block mr-[10px]"
           >
-            <span class="text-[18px] leading-[18px]">NT$</span>{{ cake.price }}
+            <span class="text-[18px] leading-[18px]">NT$</span>
+            {{ cake.price }}
           </p>
         </div>
         <ul type="circle" class="mb-[20px] grow-1">

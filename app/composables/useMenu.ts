@@ -6,7 +6,6 @@ import {
 } from '@@/utils/simulation/menu'
 
 import { useBreadcrumb } from '@/composables/useBreadcrumb'
-
 import type { GoodType, CakeDetailType, ApiListResponse } from '@/types'
 
 export const useMenuSharedState = () => {

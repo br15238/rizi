@@ -6,7 +6,6 @@ import { SHOP_INFO_TYPE, SHOP_INFO } from '@/utils/constants'
 
 const { app: { baseURL } } = useRuntimeConfig()
 const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
-
 </script>
 
 <template>
@@ -40,8 +39,9 @@ const SHOP_TYPE = SHOP_INFO_TYPE.filter(x => x.type !== 'mail')
               >
             </div>
             <div>
-              <span class="text-[16px] tracking-[.04em] leading-[24px] font-[100] inline-block ml-[10px]">{{
-                item[type.type as keyof InfoDataType] }}</span>
+              <span class="text-[16px] tracking-[.04em] leading-[24px] font-[100] inline-block ml-[10px]">
+                {{ item[type.type as keyof InfoDataType] }}
+              </span>
             </div>
           </div>
         </div>

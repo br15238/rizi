@@ -16,9 +16,7 @@ const handleResize = () => {
 
 watch(
   () => route.path,
-  () => {
-    isNavOpen.value = false
-  }
+  () => isNavOpen.value = false
 )
 
 onMounted(() => {

@@ -6,7 +6,6 @@ import { useGoodsList } from '@/composables/useGoods'
 const query = ref({ page: 1, pageSize: 20, type: 0 })
 const { data } = useGoodsList(query)
 const shopData = computed(() => data.value.list.filter(x => x.tag.includes(0)))
-
 </script>
 
 <template>

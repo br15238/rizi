@@ -3,13 +3,11 @@ import { useRoute } from '#imports'
 import { computed } from 'vue'
 
 import { useBreadcrumb } from '@/composables/useBreadcrumb'
-
 import type { BreadcrumbType } from '@/types'
 
 const route = useRoute()
 const { currentTitle } = useBreadcrumb()
 const breadcrumbData = computed(() => route.meta.breadcrumb as BreadcrumbType[] || [])
-
 </script>
 
 <template>

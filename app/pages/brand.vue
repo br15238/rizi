@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSeoMeta, useRuntimeConfig, definePageMeta } from '#imports'
+import { useSeoMeta, definePageMeta } from '#imports'
 
 import { STEP_INFO } from '@/utils/constants'
 
@@ -10,7 +10,6 @@ useSeoMeta({
 })
 definePageMeta({ title: '品牌精神' })
 
-const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
@@ -18,16 +17,16 @@ const { app: { baseURL } } = useRuntimeConfig()
     <div class="contentWrap !mb-0">
       <Divider title="品牌精神" />
     </div>
-    <img
-      src="/img/brand/view.webp"
+    <ResponsiveImg
+      img-class="w-full w-[1280px] aspect-[1280/640]"
+      src="img/brand/view"
       alt="品牌專業"
-      class="w-full w-[1200px] aspect-[1200/600]"
-    >
+      fetchpriority="high"
+      loading="eager"
+    />
     <div class="contentWrap">
       <div data-aos="zoom-in" data-aos-duration="800">
-        <h3
-          class="text-[20px] text-[var(--mainRed)] leading-[1.5em] tracking-[.04em] text-center font-[400] m-[6.3%_auto_2.3%_auto]"
-        >
+        <h3 class="text-[20px] text-[var(--mainRed)] leading-[1.5em] tracking-[.04em] text-center font-[400] m-[6.3%_auto_2.3%_auto]">
           享受生活，過「好日子」
         </h3>
         <p class="text-[16px] font-[100] tracking-[.1em] leading-[35px] text-center text-[var(--mainTxt)] mb-[11.72%]">
@@ -44,24 +43,18 @@ const { app: { baseURL } } = useRuntimeConfig()
           data-aos-duration="700"
         >
           <div class="w-full relative">
-            <h3
-              class="text-shadow-deep absolute top-[12px] left-[38px] font-[400] text-[25px] leading-[25px] text-[var(--mainWhite)]"
-            >
+            <h3 class="text-shadow-deep absolute top-[12px] left-[38px] font-[400] text-[25px] leading-[25px] text-[var(--mainWhite)]">
               {{ step.title }}
             </h3>
-            <span class="text-shadow-deep absolute top-[40px] left-[41px] font-[400] text-[var(--mainWhite)] text-[12px] leading-[12px]">
+            <span
+              class="text-shadow-deep absolute top-[40px] left-[41px] font-[400] text-[var(--mainWhite)] text-[12px] leading-[12px]"
+            >
               {{ step.sub }}
             </span>
-            <span
-              class="text-shadow-deep absolute top-[5px] left-[11px] font-[500] text-[50px] leading-[50px] text-[var(--mainWhite)] opacity-70"
-            >
+            <span class="text-shadow-deep absolute top-[5px] left-[11px] font-[500] text-[50px] leading-[50px] text-[var(--mainWhite)] opacity-70">
               {{ index + 1 }}
             </span>
-            <img
-              :src="`${baseURL}${step.img}`"
-              class="w-full rounded-[20px]"
-              :alt="step.title"
-            >
+            <ResponsiveImg img-class="w-full rounded-[20px]" :src="step.img" :alt="step.title" />
           </div>
           <div class="p-[5%_6.5%] text-[16px] font-[100] tracking-[.08em] leading-[25px] text-[var(--mainTxt)] text-justify">
             <p>{{ step.introduction }}</p>
