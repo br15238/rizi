@@ -149,17 +149,9 @@ onMounted(() => {
         <div
           class="grow flex [@media_(max-width:255px)]:flex-wrap justify-start items-center gap-[10px] cartSm:mr-[10px] w-full"
         >
-          <a-checkbox
-            v-if="activeTab === 1"
-            v-model:checked="good.checked"
-            class="w-[20px] shrink-0"
-          />
+          <a-checkbox v-if="activeTab === 1" v-model:checked="good.checked" class="w-[20px] shrink-0" />
           <div class="w-[80px] shrink-0">
-            <img
-              :src="`${baseURL}${good.img}`"
-              class="w-full"
-              :alt="good.name"
-            >
+            <ResponsiveImg img-class="w-full" :src="good.img" :alt="good.name" />
           </div>
           <div class="flex grow justify-start items-center min-w-[77.88px] cart2Sm:w-full">
             <span class="leading-[16px]">{{ good.name }}</span>
