@@ -9,7 +9,7 @@ const list = computed(() => data.value.list)
 </script>
 
 <template>
-  <section v-if="list.length > 0" class="flex flex-col">
+  <section v-if="list.length > 0" class="flex flex-col menuSm:min-h-[766.25px] md:min-h-[521.64px]">
     <Divider title="熱門菜單" />
     <div class="w-full max-h-[752.5px] menuSm:max-h-[685px] md:max-h-[500px] p-[0_0_36px_0] menuSm:p-[0_8px_40px_0] md:p-[0_40px_20px_0] grid gap-[6px] menuSm:gap-[8px] md:gap-[10px] grid-rows-[14.28%_14.28%_14.28%_14.28%_14.28%_14.28%_14.32%] menuSm:grid-rows-[16.8%_16.6%_16.6%_16.6%_16.6%_16.8%] md:grid-rows-[43%_29%_28%] grid-cols-1 menuSm:grid-cols-[50%_50%] md:grid-cols-[28%_22%_12%_21%_17%]">
       <div
