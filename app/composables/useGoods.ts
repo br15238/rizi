@@ -24,7 +24,7 @@ export const useGoodsList = (
   const { goodsList } = useGoodsSharedState()
   const dynamicKey = computed(() => {
     const p = toValue(params)
-    return `${p.type}-${p.page}-${p.pageSize}`
+    return `GoodsList-${p.type}-${p.page}-${p.pageSize}`
   })
   return useAsyncData(
     dynamicKey,
@@ -44,7 +44,7 @@ export const useGoodsList = (
 }
 
 export const useGoodsDetail = (id: Ref<number>) => {
-  const dynamicKey = computed(() => `${toValue(id)}`)
+  const dynamicKey = computed(() => `GoodsDetail-${toValue(id)}`)
   const { setTitle } = useBreadcrumb()
   return useAsyncData(
     dynamicKey,

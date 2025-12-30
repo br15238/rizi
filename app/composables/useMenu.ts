@@ -24,7 +24,7 @@ export const useMenuList = (
   const { menuList } = useMenuSharedState()
   const dynamicKey = computed(() => {
     const p = toValue(params)
-    return `${p.type}-${p.page}-${p.pageSize}`
+    return `MenuList-${p.type}-${p.page}-${p.pageSize}`
   })
   return useAsyncData(
     dynamicKey,
@@ -45,7 +45,7 @@ export const useMenuList = (
 }
 
 export const useMenuDetail = (id: Ref<number>) => {
-  const dynamicKey = computed(() => `${toValue(id)}`)
+  const dynamicKey = computed(() => `MenuDetail-${toValue(id)}`)
   const { setTitle } = useBreadcrumb()
   return useAsyncData(
     dynamicKey,

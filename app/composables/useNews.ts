@@ -8,11 +8,10 @@ export const useNews = (
     pageSize: number;
     type: number;
   }>,
-  key = 'news-list'
 ) => {
   const dynamicKey = computed(() => {
     const p = toValue(params)
-    return `${key}-${p.type}-${p.page}-${p.pageSize}`
+    return `newsList-${p.type}-${p.page}-${p.pageSize}`
   })
   
   return useAsyncData(
