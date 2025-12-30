@@ -33,19 +33,20 @@ watch(() => props.data, (newValue) => {
       data-aos-duration="800"
       data-aos-easing="ease-in-sine"
     >
-      <img
+      <ResponsiveImg
         v-for="(img, index) in props.data.detail.imgs"
-        :key="img + props.data.id"
-        :src="getSrc(img, 'phone', true)"
-        :srcset="getSrcSet(img, [280, 580])"
-        sizes="(max-width: 305px) 100vw, 580px"
-        class="cursor-pointer aspect-square w-[48.65%] mainSmallPicCol:w-[23%] mainPicCol:w-full nth-[-n+2]:mb-[2.86%] mainSmallPicCol:nth-[-n+2]:mb-0"
+        :key="img + index"
+        img-class="cursor-pointer w-full"
+        wrap-class="aspect-square w-[48.65%] mainSmallPicCol:w-[23%] mainPicCol:w-full nth-[-n+2]:mb-[2.86%] mainSmallPicCol:nth-[-n+2]:mb-0"
+        :src="img"
         :alt="props.data.name"
+        fetchpriority="high"
+        loading="eager"
         role="button"
         tabindex="0"
         @click="updateLargePicSrc(img, index)"
         @keyup.enter="updateLargePicSrc(img, index)"
-      >
+      />
     </div>
     <div
       class="w-full mainPicCol:w-[79.24%] max-w-[580px] mainPicCol:max-w-[500px] mb-[2.66%] mainPicCol:mb-0"

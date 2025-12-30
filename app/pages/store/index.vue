@@ -5,12 +5,6 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useGoodsList } from '@/composables/useGoods'
 import { STORE_TAB_TYPE } from '@/utils/constants'
 
-useSeoMeta({
-  title: '線上購物',
-  description: '好日子咖啡輕食線上購物，提供多款優質咖啡豆、禮盒選購。',
-})
-definePageMeta({ title: '線上購物' })
-
 const route = useRoute()
 const router = useRouter()
 const pageConfig = ref({
@@ -44,6 +38,12 @@ onMounted(() => {
     router.replace({ query: {} })
   }
 })
+
+useSeoMeta({
+  title: '線上購物',
+  description: '好日子咖啡輕食線上購物，提供多款優質咖啡豆、禮盒選購。',
+})
+definePageMeta({ title: '線上購物' })
 </script>
 
 <template>

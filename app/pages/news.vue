@@ -8,13 +8,6 @@ import { useNews } from '@/composables/useNews'
 import type { NewsType, NewsModelType } from '@/types'
 import { NEWS_TYPE } from '@/utils/constants'
 
-useSeoMeta({
-  title: '最新消息',
-  description:
-    '好日子咖啡輕食最新消息，不定期推出優惠活動與新品上市資訊，歡迎關注。',
-})
-definePageMeta({ title: '最新消息' })
-
 const pageConfig = ref({
   current: 1,
   pageSize: 4,
@@ -50,6 +43,13 @@ const handleOpenModal = (data: NewsType) => {
   modalConfig.value.list = newsList.value
   modalConfig.value.data = data
 }
+
+useSeoMeta({
+  title: '最新消息',
+  description:
+    '好日子咖啡輕食最新消息，不定期推出優惠活動與新品上市資訊，歡迎關注。',
+})
+definePageMeta({ title: '最新消息' })
 </script>
 
 <template>

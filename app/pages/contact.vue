@@ -3,14 +3,8 @@ import { useSeoMeta, definePageMeta } from '#imports'
 import { ref } from 'vue'
 
 import type { EmailType } from '@/types'
-import { CONTACT_OPTIONS } from '@/utils/constants'
+import { CONTACT_OPTIONS, EMAIL_TYPE } from '@/utils/constants'
 import { sendEmail } from '@/utils/tool'
-
-useSeoMeta({
-  title: '聯絡我們',
-  description: '好日子咖啡輕食聯絡方式，歡迎諮詢客服專區、異業合作或加盟資訊。',
-})
-definePageMeta({ title: '聯絡我們' })
 
 const formRef = ref<HTMLFormElement | null>(null)
 const initData = {
@@ -26,8 +20,14 @@ const resetFormData = () => formData.value = { ...initData }
 
 const handleSendEmail = () => {
   if (!formRef.value?.checkValidity()) return
-  sendEmail('40ouhzr', { ...formData.value }, resetFormData)
+  sendEmail(EMAIL_TYPE.Contact, { ...formData.value }, resetFormData)
 }
+
+useSeoMeta({
+  title: '聯絡我們',
+  description: '好日子咖啡輕食聯絡方式，歡迎諮詢客服專區、異業合作或加盟資訊。',
+})
+definePageMeta({ title: '聯絡我們' })
 </script>
 
 <template>

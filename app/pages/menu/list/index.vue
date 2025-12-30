@@ -6,12 +6,6 @@ import Tab from '@/components/Tab.vue'
 import { useMenuList } from '@/composables/useMenu'
 import { MENU_TAB_TYPE } from '@/utils/constants'
 
-useSeoMeta({ title: '菜單列表', description: '查看各類咖啡豆、甜點與輕食的詳細介紹。' })
-definePageMeta({
-  title: '菜單列表',
-  breadcrumb: [{ title: '門市菜單', to: '/menu' }],
-})
-
 const route = useRoute()
 const router = useRouter()
 const pageConfig = ref({
@@ -44,6 +38,12 @@ onMounted(() => {
   if (route.query && route.query.type) {
     router.replace({ query: {} })
   }
+})
+
+useSeoMeta({ title: '菜單列表', description: '查看各類咖啡豆、甜點與輕食的詳細介紹。' })
+definePageMeta({
+  title: '菜單列表',
+  breadcrumb: [{ title: '門市菜單', to: '/menu' }],
 })
 </script>
 

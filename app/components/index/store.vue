@@ -16,7 +16,12 @@ const shopData = computed(() => data.value.list.filter(x => x.tag.includes(0)))
       data-aos="fade-up"
       data-aos-duration="700"
     >
-      <GoodCard v-for="good in shopData" :key="good.name" :data="good" />
+      <GoodCard
+        v-for="good in shopData"
+        :key="good.name"
+        :data="good"
+        :lcp="true"
+      />
     </div>
     <MoreBtn link="store" />
   </section>

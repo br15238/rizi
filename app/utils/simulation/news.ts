@@ -1,6 +1,5 @@
-import type { ApiParamsType } from '@/types'
-
 import db from '../../assets/db.json'
+import type { ApiParamsType } from '../../types'
 
 export const simulateNewsApi = (
   query: ApiParamsType = {},

@@ -10,14 +10,6 @@ import {
 import type { GoodType, CakeDetailType } from '@/types'
 import { GOOD_DETAIL_TYPE } from '@/utils/constants'
 
-useSeoMeta({ title: () => typeof cake.value === 'object' && cake.value?.id ? cake.value.name : '商品不存在' })
-definePageMeta({
-  breadcrumb: [
-    { title: '門市菜單', to: '/menu' },
-    { title: '菜單列表', to: '/menu/list' },
-  ]
-})
-
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
 const { data } = await useMenuDetail(detailId)
@@ -35,6 +27,14 @@ const recommendList = computed(() => {
   return list
     .filter(x => x.id !== currentId)
     .slice(0, 4)
+})
+
+useSeoMeta({ title: () => typeof cake.value === 'object' && cake.value?.id ? cake.value.name : '商品不存在' })
+definePageMeta({
+  breadcrumb: [
+    { title: '門市菜單', to: '/menu' },
+    { title: '菜單列表', to: '/menu/list' },
+  ]
 })
 </script>
 

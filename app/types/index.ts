@@ -84,6 +84,8 @@ export type NewsModelType = {
   data: NewsType
 }
 
+export type MailType = Readonly<Record<'Contact' | 'GoodsList', string>>
+
 export type NavInfoType = Readonly<Record<'label' | 'link', string>>
 
 export type ShopInfoType = Readonly<Record<'label' | 'type', string>>
@@ -109,7 +111,7 @@ export type EmailType = Readonly<Record<EmailKeyStr, string>>
 
 type GoodsListMailKeyStr = 'email' | 'data' | 'content'
 export type GoodsListMailType = Record<GoodsListMailKeyStr, string> &
-  Record<'totalPrice', number>
+  Record<'totalSale', number>
 
 export type BreadcrumbDataType = Readonly<Record<'name' | 'link', string>>
 

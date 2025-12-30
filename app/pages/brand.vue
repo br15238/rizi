@@ -9,7 +9,6 @@ useSeoMeta({
     '好日子咖啡輕食追求品質與效率，採用自家烘焙頂級莊園咖啡豆，堅持現做健康輕食。',
 })
 definePageMeta({ title: '品牌精神' })
-
 </script>
 
 <template>

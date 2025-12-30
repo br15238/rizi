@@ -8,14 +8,8 @@ import type { CheckboxChangeEvent } from 'ant-design-vue/es/checkbox/interface'
 import { useCartStore } from '@/stores/cartStore'
 import { useFavouriteStore } from '@/stores/favouriteStore'
 import type { GoodsListMailType } from '@/types'
-import { CART_TYPE } from '@/utils/constants'
+import { CART_TYPE, EMAIL_TYPE } from '@/utils/constants'
 import { sendEmail } from '@/utils/tool'
-
-useSeoMeta({
-  title: '購物車',
-  robots: 'noindex, nofollow'
-})
-definePageMeta({ title: '購物車' })
 
 const activeTab = ref(1)
 const isCheckoutModalShow = ref(false)
@@ -24,7 +18,7 @@ const formData: UnwrapRef<GoodsListMailType> = reactive({
   email: '',
   data: '',
   content: '',
-  totalPrice: 0
+  totalSale: 0
 })
 const cartStore = useCartStore()
 const favouriteStore = useFavouriteStore()
@@ -91,8 +85,8 @@ const handleSendList = () => {
       .format(new Date())
       .replace(/\//g, '-')
     formData.content = renderList()
-    formData.totalPrice = renderPrice().totalPrice
-    sendEmail('evvyk7h', formData, handleSentMail)
+    formData.totalSale = renderPrice().totalSale
+    sendEmail(EMAIL_TYPE.GoodsList, formData, handleSentMail)
   })
 }
 
@@ -110,6 +104,12 @@ onMounted(() => {
     checkBoxStatus(cartData.value.map(x => x.checked))
   })
 })
+
+useSeoMeta({
+  title: '購物車',
+  robots: 'noindex, nofollow'
+})
+definePageMeta({ title: '購物車' })
 </script>
 
 <template>

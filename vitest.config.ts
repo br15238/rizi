@@ -21,7 +21,7 @@ export default defineConfig({
     ],
     coverage: {
       provider: 'v8',
-      include: ['app/utils/tool.ts', 'app/stores/**/*.ts'],
+      include: ['app/utils/tool.ts', 'app/utils/simulation/*.ts', 'app/stores/**/*.ts'],
       thresholds: {
         lines: 100,
         functions: 100,

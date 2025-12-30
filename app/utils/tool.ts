@@ -13,7 +13,7 @@ export const sendEmail = async (templateKey: string, formData: any, callback?: (
       message.success({ content: '郵件發送成功！', key })
     })
     .catch((error) => {
-      message.error({ content: `發送失敗: ${error.text}`, key })
+      message.error({ content: `發送失敗: ${error.status === 422 ? '您輸入的信箱不存在' : error.text}`, key })
     })
 }
 
@@ -22,13 +22,7 @@ export const getSrc = (
   size: 'phone' | 'pc' = 'pc',
   domain = true
 ) => {
-  let baseURL = '/'
-  try {
-    const config = useRuntimeConfig()
-    baseURL = config.app.baseURL
-  } catch {
-    baseURL = '/'
-  }
+  const { app: { baseURL } } = useRuntimeConfig()
   return domain ? `${baseURL}${url}-${size}.webp` : `${url}-${size}.webp`
 }
 

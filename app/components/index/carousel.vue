@@ -15,7 +15,7 @@ const { data: banners } = await useBanner()
 const bannerList = computed(() => banners.value ?? [])
 const modules = [Navigation]
 
-const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank')
+const handleOpenNewTab = (link: string) => window.open(baseURL + link, '_blank', 'noopener,noreferrer')
 </script>
 
 <template>

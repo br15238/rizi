@@ -13,16 +13,6 @@ import { useFavouriteStore } from '@/stores/favouriteStore'
 import type { GoodType, CoffeeDetailType } from '@/types'
 import { STORE_DETAIL_TYPE } from '@/utils/constants'
 
-useSeoMeta({
-  title: () =>
-    typeof good.value === 'object' && good.value?.id
-      ? good.value.name
-      : '商品不存在',
-})
-definePageMeta({
-  breadcrumb: [{ title: '線上購物', to: '/store' }],
-})
-
 const route = useRoute()
 const detailId = computed(() => Number(route.params.id))
 const { data } = await useGoodsDetail(detailId)
@@ -43,6 +33,16 @@ const recommendList = computed(() => {
   return list
     .filter(x => x.id !== currentId)
     .slice(0, 4)
+})
+
+useSeoMeta({
+  title: () =>
+    typeof good.value === 'object' && good.value?.id
+      ? good.value.name
+      : '商品不存在',
+})
+definePageMeta({
+  breadcrumb: [{ title: '線上購物', to: '/store' }],
 })
 </script>
 

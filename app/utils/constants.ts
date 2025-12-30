@@ -10,6 +10,7 @@ import type {
   SnsInfoType,
   StoreDetailType,
   GoodDetailType,
+  MailType,
 } from '@/types'
 
 export const SITE_NAME = '好日子咖啡輕食 RIZI COFE HOUSE'
@@ -103,6 +104,11 @@ export const CART_TYPE: OptionType[] = [
   { label: '待結帳', value: 1 },
   { label: '收藏', value: 2 },
 ]
+
+export const EMAIL_TYPE: MailType = {
+  Contact: '40ouhzr',
+  GoodsList: 'evvyk7h'
+}
 
 export const STEP_INFO: StepDataType[] = [
   {

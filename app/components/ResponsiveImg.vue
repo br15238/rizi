@@ -1,10 +1,16 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'ResponsiveImg',
+  inheritAttrs: false
+})
+
 import { useRuntimeConfig } from '#imports'
+import { useAttrs } from 'vue'
 import type { PropType, CSSProperties } from 'vue'
 
 const props = defineProps({
-  src: String,
-  alt: String,
+  src: { type: String, required: true },
+  alt: { type: String, required: true },
   imgClass: {
     type: [String, Array, Object] as PropType<
       | string
@@ -14,20 +20,26 @@ const props = defineProps({
     default: undefined,
   },
   imgStyle: Object as PropType<CSSProperties>,
-  loading: { type: String as PropType<undefined | 'lazy' | 'eager'>, default: undefined },
-  fetchpriority: { type: String as PropType<'high' | 'low' | 'auto'>, default: 'lazy' },
+  wrapClass: {
+    type: [String, Array, Object] as PropType<string | string[] | Record<string, boolean>>,
+    default: undefined,
+  },
+  loading: String as PropType<'lazy' | 'eager' | undefined>,
+  fetchpriority: String as PropType<'high' | 'low' | 'auto' | undefined>,
 })
+
+const attrs = useAttrs()
 
 const { app: { baseURL } } = useRuntimeConfig()
 </script>
 
 <template>
-  <picture>
+  <picture :class="props.wrapClass">
     <source media="(max-width: 412px)" :srcset="`${baseURL}${props.src}-phone.webp`" type="image/webp">
     <source :media="`(min-width: 412.00001px)`" :srcset="`${baseURL}${props.src}-pc.webp`" type="image/webp">
-    <source :srcset="`${baseURL}${props.src}.webp`" type="image/webp">
     <img
-      :src="`${baseURL}${props.src}.jpg`"
+      v-bind="attrs"
+      :src="`${baseURL}${props.src.replace('LCP', '')}.jpg`"
       :alt="props.alt"
       :fetchpriority="props.fetchpriority"
       :loading="props.loading"
