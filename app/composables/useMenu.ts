@@ -47,11 +47,10 @@ export const useMenuList = (
 export const useMenuDetail = (id: Ref<number>) => {
   const dynamicKey = computed(() => `MenuDetail-${toValue(id)}`)
   const { setTitle } = useBreadcrumb()
-  return useAsyncData(
+  const result = useAsyncData(
     dynamicKey,
     async () => {
       const res = await simulateMenuDetailApi(String(toValue(id)))
-      if (res?.name) setTitle(res.name)
       return res
     },
     {
@@ -60,4 +59,14 @@ export const useMenuDetail = (id: Ref<number>) => {
       watch: [id],
     },
   )
+
+  watch(
+    () => result.data.value,
+    (newVal) => {
+      if (newVal?.name) setTitle(newVal.name)
+    },
+    { immediate: true }
+  )
+
+  return result
 }

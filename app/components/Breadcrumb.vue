@@ -11,7 +11,6 @@ const breadcrumbData = computed(() => route.meta.breadcrumb as BreadcrumbType[] 
 </script>
 
 <template>
-  {{ currentTitle}}
   <section class="w-full bg-[var(--mainGray)] flex justify-center">
     <div class="w-full max-w-[1080px]">
       <ul class="m-auto flex p-[5px_4%_8px] leading-[12px] flex-wrap">
