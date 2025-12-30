@@ -19,12 +19,12 @@ export const useGoodsList = (
     pageSize: number
     type?: number
   }>,
-  key = 'goods-list'
+  option: { writeShared: boolean } = { writeShared: false }
 ) => {
   const { goodsList } = useGoodsSharedState()
   const dynamicKey = computed(() => {
     const p = toValue(params)
-    return `${key}-${p.type}-${p.page}-${p.pageSize}`
+    return `${p.type}-${p.page}-${p.pageSize}`
   })
   return useAsyncData(
     dynamicKey,
@@ -32,7 +32,7 @@ export const useGoodsList = (
       const res = (await simulateGoodsApi(
         toValue(params),
       )) as unknown as ApiListResponse<GoodType<CoffeeDetailType>>
-      if (res.list && key === 'goods-list-main') goodsList.value = res.list
+      if (res.list && option.writeShared) goodsList.value = res.list
       return res
     },
     {
@@ -43,14 +43,14 @@ export const useGoodsList = (
   )
 }
 
-export const useGoodsDetail = (id: Ref<number>, key = 'goods-detail') => {
-  const { currentTitle } = useBreadcrumb()
-  const dynamicKey = computed(() => `${key}-${toValue(id)}`)
+export const useGoodsDetail = (id: Ref<number>) => {
+  const dynamicKey = computed(() => `${toValue(id)}`)
+  const { setTitle } = useBreadcrumb()
   return useAsyncData(
     dynamicKey,
     async () => {
       const res = await simulateGoodsDetailApi(String(toValue(id)))
-      if (res?.name) currentTitle.value = res.name
+      if (res?.name) setTitle(res.name)
       return res
     },
     {

@@ -18,7 +18,7 @@ const queryParams = computed(() => ({
   page: pageConfig.value.current,
   pageSize: pageConfig.value.pageSize
 }))
-const { data } = useMenuList(queryParams, 'menu-list-main')
+const { data } = useMenuList(queryParams, { writeShared: true })
 const menuList = computed(() => data.value?.list || [])
 const total = computed(() => data.value?.total || 0)
 

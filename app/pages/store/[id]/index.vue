@@ -26,7 +26,7 @@ const recommendParams = computed(() => ({
   pageSize: 6
 }))
 
-const { data: recData } = await useGoodsList(recommendParams, 'goods-list-recommend')
+const { data: recData } = await useGoodsList(recommendParams)
 const recommendList = computed(() => {
   const currentId = detailId.value
   const list = recData.value?.list || goodsList.value

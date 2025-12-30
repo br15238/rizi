@@ -20,7 +20,7 @@ const recommendParams = computed(() => ({
   page: 1,
   pageSize: 6
 }))
-const { data: recData } = await useMenuList(recommendParams, 'menu-list-recommend')
+const { data: recData } = await useMenuList(recommendParams)
 const recommendList = computed(() => {
   const currentId = detailId.value
   const list = recData.value?.list || menuList.value

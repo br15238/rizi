@@ -3,5 +3,9 @@ export const useBreadcrumb = () => {
     'breadcrumb-current-title',
     () => null
   )
-  return { currentTitle }
+
+  const setTitle = (title: string | null) =>
+    currentTitle.value = title
+
+  return { currentTitle, setTitle }
 }

@@ -19,12 +19,12 @@ export const useMenuList = (
     page: number
     pageSize: number
   }>,
-  key = 'menu-list'
+  option: { writeShared: boolean } = { writeShared: false }
 ) => {
   const { menuList } = useMenuSharedState()
   const dynamicKey = computed(() => {
     const p = toValue(params)
-    return `${key}-${p.type}-${p.page}-${p.pageSize}`
+    return `${p.type}-${p.page}-${p.pageSize}`
   })
   return useAsyncData(
     dynamicKey,
@@ -32,7 +32,7 @@ export const useMenuList = (
       const res = (await simulateMenuApi(
         toValue(params),
       )) as unknown as ApiListResponse<GoodType<CakeDetailType>>
-      if (res.list && key === 'menu-list-main') menuList.value = res.list
+      if (res.list && option.writeShared) menuList.value = res.list
       return res
     },
     {
@@ -44,14 +44,14 @@ export const useMenuList = (
   )
 }
 
-export const useMenuDetail = (id: Ref<number>, key = 'menu-detail') => {
-  const { currentTitle } = useBreadcrumb()
-  const dynamicKey = computed(() => `${key}-${toValue(id)}`)
+export const useMenuDetail = (id: Ref<number>) => {
+  const dynamicKey = computed(() => `${toValue(id)}`)
+  const { setTitle } = useBreadcrumb()
   return useAsyncData(
     dynamicKey,
     async () => {
       const res = await simulateMenuDetailApi(String(toValue(id)))
-      if (res?.name) currentTitle.value = res.name
+      if (res?.name) setTitle(res.name)
       return res
     },
     {
